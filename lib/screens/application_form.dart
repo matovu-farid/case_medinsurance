@@ -1,6 +1,8 @@
 import 'package:case_app/screens/products_and_services.dart';
 import 'package:case_app/widgets/faridFormField.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class ApplicationForm extends StatefulWidget {
   @override
@@ -13,7 +15,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
 
 
 
-  final formList1 = <FaridFormField>[
+  final formList1 = [
     FaridFormField(
       text: 'Company',
 
@@ -28,6 +30,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
     ),
     FaridFormField(
       text: 'DateOfBirth',
+      isDate:true,
 
     ),
     FaridFormField(
@@ -75,7 +78,9 @@ class _ApplicationFormState extends State<ApplicationForm> {
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
-      'Date of Birth':FaridFormField(),
+      'Date of Birth':FaridFormField(
+        isDate: true,
+      ),
     },
     {
       'Name': FaridFormField(),
@@ -83,7 +88,9 @@ class _ApplicationFormState extends State<ApplicationForm> {
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
-      'Date of Birth':FaridFormField(),
+      'Date of Birth':FaridFormField(
+        isDate: true,
+      ),
     },
     {
       'Name': FaridFormField(),
@@ -91,7 +98,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
-      'Date of Birth':FaridFormField(),
+      'Date of Birth':FaridFormField(isDate: true,),
     },
     {
       'Name': FaridFormField(),
@@ -99,7 +106,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
-      'Date of Birth':FaridFormField(),
+      'Date of Birth':FaridFormField(isDate: true,),
     },
     {
       'Name': FaridFormField(),
@@ -107,7 +114,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
-      'Date of Birth':FaridFormField(),
+      'Date of Birth':FaridFormField(isDate: true,),
     },
   ];
 
@@ -237,6 +244,28 @@ class _ApplicationFormState extends State<ApplicationForm> {
               Text(
                   'Information regarding any Pre-existing medical conditions, regular medication,surgical operations:'),
               TextField(),
+              FlatButton(
+                  onPressed: () {
+                    DatePicker.showDatePicker(context,
+                        showTitleActions: true,
+                        minTime: DateTime(2018, 3, 5),
+                        maxTime: DateTime(2019, 6, 7),
+                        theme: DatePickerTheme(
+                            headerColor: Colors.orange,
+                            backgroundColor: Colors.blue,
+                            itemStyle: TextStyle(
+                                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                            doneStyle: TextStyle(color: Colors.white, fontSize: 16)),
+                        onChanged: (date) {
+                          print('change $date in time zone ' + date.timeZoneOffset.inHours.toString());
+                        }, onConfirm: (date) {
+                          print('confirm $date');
+                        }, currentTime: DateTime.now(), locale: LocaleType.en);
+                  },
+                  child: Text(
+                    'show date picker(custom theme &date time range)',
+                    style: TextStyle(color: Colors.blue),
+                  )),
               MaterialButton(
                 color: Colors.green,
                 onPressed: () {
@@ -251,6 +280,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
                   'Submit',
                   style: TextStyle(color: Colors.white),
                 ),
+
               )
             ],
           ),
@@ -260,6 +290,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
   }
 }
 void printInfo(dynamic e){
+//  if(e.textGot.runtimeType==Da)
   if (e.isDropdown) {
     print('${e.text} : ${e.selectedItem}');
   }

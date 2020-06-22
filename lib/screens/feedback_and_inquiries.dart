@@ -1,5 +1,7 @@
+import 'package:case_app/screens/application_form.dart';
 import 'package:case_app/screens/products_and_services.dart';
 import 'package:case_app/widgets/faridFormField.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FeedbackInquiries extends StatefulWidget {
@@ -8,40 +10,66 @@ class FeedbackInquiries extends StatefulWidget {
 }
 
 class _FeedbackInquiriesState extends State<FeedbackInquiries> {
-  final Map<String,FaridFormField> formMap = {
-    'Company':FaridFormField(
+  final formInfo = [];
+
+  addToFormInfo(Map<String, FaridFormField> formMap) {
+    formInfo.addAll(formMap.values);
+  }
+
+  final Map<String, FaridFormField> formMap = {
+    'Company': FaridFormField(
       text: 'Company',
     ),
-    'Are you a member?':FaridFormField(
-      text: 'Are you a member?',
-      isRadioBtton: true,
-      radioList: [
-        {'Yes': 0},
-        {'No': 1}
-      ],
-    ),
-    'fill your card number':FaridFormField(
-      text: 'If a member,fill your card number:',
-    ),
-    'Phone No':FaridFormField(
+
+
+    'Phone No': FaridFormField(
       text: 'Phone No:',
     ),
-    'Address/Location':FaridFormField(
-      text: 'Address/Location',
+    'Address': FaridFormField(
+      text: 'Address',
     ),
-    'Most visited provider':FaridFormField(
+    'Most visited provider': FaridFormField(
       text: 'Most visited provider',
     ),
-    'Other provider visited':FaridFormField(
+    'Other provider visited': FaridFormField(
       text: 'Other provider visited',
     )
   };
+  TextEditingController _complaintController;
+  TextEditingController _complimentsController;
+  TextEditingController _inquiryController;
+
+
+  @override
+  void initState() {
+    super.initState();
+    _complaintController = TextEditingController();
+    _complimentsController= TextEditingController();
+    _inquiryController= TextEditingController();
+
+  }
+
+
+  @override
+  void dispose() {
+    _complimentsController.dispose();
+    _complaintController.dispose();
+    _inquiryController.dispose();
+
+    super.dispose();
+  }
+  int groupValue=0;
+  FaridFormField cardField= FaridFormField(
+  text: 'fill your card number:',
+
+  );
+
 
   @override
   Widget build(BuildContext context) {
-    GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+    // GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
-      key: scaffoldKey,
+      // key: scaffoldKey,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.lightGreen[200],
@@ -63,8 +91,19 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
           ],
         ),
       ),
-      body: Column(
+      body: ListView(
+        shrinkWrap: true,
         children: [
+
+           Row(
+             children: [
+               Flexible(child: Text('Are you a member?')),
+               Flexible(child: RadioListTile(value:0, groupValue: groupValue, onChanged: (value)=>setState((){groupValue=value;}),title: Text('Yes'),)),
+               Flexible(child: RadioListTile(value: 1, groupValue: groupValue, onChanged: (value)=>setState(()=>groupValue=value),title: Text('No'),)),
+             ],
+           ),
+           if(groupValue==0)
+           cardField,
           ListView.builder(
               shrinkWrap: true,
               itemCount: formMap.values.toList().length,
@@ -74,34 +113,55 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
                   child: formMap.values.toList()[index],
                 );
               }),
-          TextFormField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelStyle: TextStyle(color: Colors.green),
-                labelText: 'Complaints:'),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical:8.0),
+            child: TextFormField(
+              controller: _complaintController,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.green),
+                  labelText: 'Complaints:'),
+            ),
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelStyle: TextStyle(color: Colors.green),
-                labelText: 'Compliments:'),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical:8.0),
+            child: TextFormField(
+              controller: _complimentsController,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.green),
+                  labelText: 'Compliments:'),
+            ),
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelStyle: TextStyle(color: Colors.green),
-                labelText: 'Inquiry:'),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical:8.0),
+            child: TextFormField(
+              controller: _inquiryController,
+              decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.green),
+                  labelText: 'Inquiry:'),
+            ),
           ),
           MaterialButton(
-            onPressed: (){
-              scaffoldKey.currentState.showBottomSheet((context) =>
-                  Container(
-                    width: double.infinity,
-                    color: Colors.green[200],
-                      child: Text('Thank you \n Our team will contact you for any clarification')));
+            onPressed: () {
+              addToFormInfo(formMap);
+              //print('${formInfo}');
+              formMap.values.toList().forEach((element) {
+                printInfo(element);
+              });
+              //print('Card Number : ${_cardNumber.text}');
+              printInfo(cardField);
+              print('Complaint : ${_complaintController.text}');
+              print('Compliments : ${_complimentsController.text}');
+              print('Inquiry : ${_inquiryController.text}');
+
             },
             color: Colors.green,
-            child:Text('Submit',style: TextStyle(color: Colors.white),),
+            child: Text(
+              'Submit',
+              style: TextStyle(color: Colors.white),
+            ),
           )
         ],
       ),
