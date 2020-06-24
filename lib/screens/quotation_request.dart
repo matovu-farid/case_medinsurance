@@ -19,80 +19,101 @@ class QuotationRequestState extends State<QuotationRequest> {
   final corporateMap = <String, FaridFormField>{
     'Company': FaridFormField(
       text: 'Company',
+      description: 'required',
+
     ),
     'No. of lives': FaridFormField(
       text: 'No. of lives',
+        description: 'required'
     ),
     'Email': FaridFormField(
       text: 'Email',
+      description: 'email',
     ),
-    'Phone No': FaridFormField(
+    'Company': FaridFormField(
       text: 'Company',
+      description: 'required',
     ),
     'Address': FaridFormField(
       text: 'Address',
+        description: 'required'
     ),
     'Phone No': FaridFormField(
       text: 'Phone No',
+        description: 'Phone number'
+    ),
+    'Type of business': FaridFormField(
+     // text: 'business',
+      description: 'required',
+
+      text: 'Type of Business',
+      hint: 'Select Type of business',
+        isDropdown: true,
+
+      dropdownNames: [
+        'NGO',
+        'Government Body',
+        'School',
+        'Manufacturing',
+        'Religious institution',
+        'Financial institution',
+        'Sacco',
+        'Other '
+      ],
     ),
 
   };
 
-//  final List<FaridFormField> corporateList = [
-//    FaridFormField(
-//      text: 'Company',
-//    ),
-//    FaridFormField(
-//      text: 'No. of Lives',
-//    ),
-//    FaridFormField(
-//      text: 'Email',
-//    ),
-//    FaridFormField(
-//      text: 'Phone No',
-//    ),
-//    FaridFormField(
-//      text: 'Address/Location',
-//    ),
-//    FaridFormField(
-//      text: 'Types of Business',
-//    ),
-//    FaridFormField(
-//      text: 'Contact Name',
-//    ),
-//  ];
   final Map<String,FaridFormField> individualMap= {
     'Name': FaridFormField(
       text: 'Name',
+        description: 'required'
     ),
     'Phone No':FaridFormField(
       text: 'Phone No',
+        description: 'Phone number'
     ),
     'Email':FaridFormField(
       text: 'Email',
+      description: 'email',
     ),
     'Age Bracket':FaridFormField(
       text: 'Age Bracket',
+        description: 'required'
     ),
     'Cover Type':FaridFormField(
       text: 'Cover Type',
+        description: 'required',
+        isDropdown:true,
+      hint: 'Select Cover type',
+      dropdownNames: [
+        'Individual Cover',
+        'Family Cover',
+        'Antenatal Cover',
+        'Antenatal & Delivery Package',
+        'Short-term Cover',
+        'Elderly Cover',
+        'Hypertension Package',
+        'Hypertension & Diabetes Package',
+      ],
     ),
+
   };
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
 
+
     return  Scaffold(
-
-
-
+      key: _formKey,
         appBar: AppBar(
-          backgroundColor: Colors.lightGreen[200],
+          backgroundColor: Colors.white,
 
           centerTitle: true,
           title: Text("Quotation Request",
-            style: TextStyle(color: Colors.lightGreen[400]),),
-        ),
+            style: TextStyle(color:  Colors.white,),
+        ),),
         body: Container(
 
           child: Column(
@@ -204,6 +225,7 @@ class QuotationRequestState extends State<QuotationRequest> {
                 flex: 1,
                 child: MaterialButton(
                   onPressed: (){
+                    _formKey.currentState.validate();
                    if (groupvalue==0){
                      for(var field in individualMap.values.toList()){
                        print('Individual');

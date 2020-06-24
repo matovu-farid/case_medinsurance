@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class ProductAndServices extends StatelessWidget{
 final productServicesList=[
   'Corporate Cover',
-  'Individual Cover'
+  'Individual Cover',
   'Family Cover',
   'Antenatal Cover',
   'Antenatal & Delivery Package',

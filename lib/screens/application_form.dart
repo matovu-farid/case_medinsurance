@@ -3,6 +3,7 @@ import 'package:case_app/widgets/faridFormField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 class ApplicationForm extends StatefulWidget {
   @override
@@ -11,21 +12,23 @@ class ApplicationForm extends StatefulWidget {
 
 class _ApplicationFormState extends State<ApplicationForm> {
   String inputText = '';
-
+  static final required = RequiredValidator(errorText: 'required');
 
 
 
   final formList1 = [
     FaridFormField(
       text: 'Company',
-
+      validator: required,
     ),
     FaridFormField(
       text: "Main Member's Name",
+      description: 'required',
 
     ),
     FaridFormField(
       text: 'PhoneNo',
+      description : 'Phone number',
 
     ),
     FaridFormField(
@@ -35,6 +38,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
     ),
     FaridFormField(
       text: 'Gender',
+
       isRadioBtton: true,
 
       radioList: [
@@ -44,21 +48,18 @@ class _ApplicationFormState extends State<ApplicationForm> {
     ),
     FaridFormField(
       text: 'Email',
+      description: 'email',
 
     ),
     FaridFormField(
       text: 'Phone No',
+      description: 'Phone number',
     ),
     FaridFormField(
       text: 'Address/Location',
+      description: "required",
     ),
-    FaridFormField(
 
-      text: 'Type of Business',
-      hint: 'Select Type of business',
-      isDropdown: true,
-      dropdownNames: ["cookies", 'monkey', 'hahaha'],
-    ),
   ];
   List<Map<String, TextEditingController>> listOfContent = [];
   final tableInfo = <Map<String, String>>[];
@@ -73,48 +74,60 @@ class _ApplicationFormState extends State<ApplicationForm> {
   }
   final tableTextFields=[
     {
-      'Name': FaridFormField(),
+      'Name': FaridFormField(
+        fieldHieght: 45,
+      ),
       'Gender':FaridFormField(
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
       'Date of Birth':FaridFormField(
-        isDate: true,
+        isDate: true,fieldHieght: 45,
       ),
     },
     {
-      'Name': FaridFormField(),
+      'Name': FaridFormField(
+        fieldHieght: 45,
+      ),
       'Gender':FaridFormField(
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
       'Date of Birth':FaridFormField(
-        isDate: true,
+        isDate: true,fieldHieght: 45,
       ),
     },
     {
-      'Name': FaridFormField(),
+      'Name': FaridFormField(
+        fieldHieght: 45,
+      ),
       'Gender':FaridFormField(
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
-      'Date of Birth':FaridFormField(isDate: true,),
+      'Date of Birth':FaridFormField(isDate: true,fieldHieght: 45,),
     },
     {
-      'Name': FaridFormField(),
+      'Name': FaridFormField(
+
+        fieldHieght: 45,
+      ),
       'Gender':FaridFormField(
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
-      'Date of Birth':FaridFormField(isDate: true,),
+      'Date of Birth':FaridFormField(isDate: true,fieldHieght: 45,),
+
     },
     {
-      'Name': FaridFormField(),
+      'Name': FaridFormField(
+        fieldHieght: 45,
+      ),
       'Gender':FaridFormField(
         isDropdown: true,
         dropdownNames: ['Male', 'Female'],
       ),
-      'Date of Birth':FaridFormField(isDate: true,),
+      'Date of Birth':FaridFormField(isDate: true,fieldHieght: 45,),
     },
   ];
 
@@ -140,7 +153,7 @@ class _ApplicationFormState extends State<ApplicationForm> {
 
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.lightGreen[200],
+        backgroundColor: Colors.lightGreen[400],
         title: Column(
           children: [
             Row(
@@ -165,124 +178,106 @@ class _ApplicationFormState extends State<ApplicationForm> {
       body: Form(
         key: _formKey,
         child: Center(
-          child: ListView(
-            children: [
-              ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: formList1.length,
-                  itemBuilder: (context, index) {
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView(
+              children: [
+                ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: formList1.length,
+                    itemBuilder: (context, index) {
 //                    listOfContent.add(
 //                        {formList1[index].text: formList1[index].controller});
-                    return Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: formList1[index],
-                    );
-                  }),
-              Center(
-                child: Text('Dependants Details:'),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Table(
-                  columnWidths: {0: FixedColumnWidth(20)},
-                  border: TableBorder.all(color: Colors.black),
-                  children: [
-                    TableRow(
-                      children: [
-                        SizedBox(
-                          width: 20,
-                          height: 20,
-                        ),
-                        Center(child: Text('Name')),
-                        Center(child: Text('Gender')),
-                        Center(child: Text('Date of Birth')),
-                      ],
-                    ),
-                    TableRow(
-                      children: [
-                        Center(child: Text('1.')),
-                        tableTextFields[0]['Name'],
-                        tableTextFields[0]['Gender'],
-                        tableTextFields[0]['Date of Birth'],
-                      ],
-                    ),
-                    TableRow(
-                      children: [
-                        Center(child: Text('2.')),
-                        tableTextFields[1]['Name'],
-                        tableTextFields[1]['Gender'],
-                        tableTextFields[1]['Date of Birth'],
-                      ],
-                    ),
-                    TableRow(
-                      children: [
-                        Center(child: Text('3.')),
-                        tableTextFields[2]['Name'],
-                        tableTextFields[2]['Gender'],
-                        tableTextFields[2]['Date of Birth'],
-                      ],
-                    ),
-                    TableRow(
-                      children: [
-                        Center(child: Text('4.')),
-                        tableTextFields[3]['Name'],
-                        tableTextFields[3]['Gender'],
-                        tableTextFields[3]['Date of Birth'],
-                      ],
-                    ),
-                    TableRow(
-                      children: [
-                        Center(child: Text('5.')),
-                        tableTextFields[4]['Name'],
-                        tableTextFields[4]['Gender'],
-                        tableTextFields[4]['Date of Birth'],
-                      ],
-                    ),
-                  ],
+                      return Padding(
+                        padding: const EdgeInsets.all(3.0),
+                        child: formList1[index],
+                      );
+                    }),
+                Center(
+                  child: Text('Dependants Details:'),
                 ),
-              ),
-              Text(
-                  'Information regarding any Pre-existing medical conditions, regular medication,surgical operations:'),
-              TextField(),
-              FlatButton(
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Table(
+                    columnWidths: {0: FixedColumnWidth(20)},
+                    border: TableBorder.all(color: Colors.black),
+                    children: [
+                      TableRow(
+                        children: [
+                          SizedBox(
+                            width: 20,
+                            height: 20,
+                          ),
+                          Center(child: Text('Name')),
+                          Center(child: Text('Gender')),
+                          Center(child: Text('Date of Birth')),
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          Center(child: Text('1.')),
+                          tableTextFields[0]['Name'],
+                          tableTextFields[0]['Gender'],
+                          tableTextFields[0]['Date of Birth'],
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          Center(child: Text('2.')),
+                          tableTextFields[1]['Name'],
+                          tableTextFields[1]['Gender'],
+                          tableTextFields[1]['Date of Birth'],
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          Center(child: Text('3.')),
+                          tableTextFields[2]['Name'],
+                          tableTextFields[2]['Gender'],
+                          tableTextFields[2]['Date of Birth'],
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          Center(child: Text('4.')),
+                          tableTextFields[3]['Name'],
+                          tableTextFields[3]['Gender'],
+                          tableTextFields[3]['Date of Birth'],
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          Center(child: Text('5.')),
+                          tableTextFields[4]['Name'],
+                          tableTextFields[4]['Gender'],
+                          tableTextFields[4]['Date of Birth'],
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Text(
+                    'Information regarding any Pre-existing medical conditions, regular medication,surgical operations:'),
+                TextField(),
+
+                MaterialButton(
+                  color: Colors.green,
                   onPressed: () {
-                    DatePicker.showDatePicker(context,
-                        showTitleActions: true,
-                        minTime: DateTime(2018, 3, 5),
-                        maxTime: DateTime(2019, 6, 7),
-                        theme: DatePickerTheme(
-                            headerColor: Colors.orange,
-                            backgroundColor: Colors.blue,
-                            itemStyle: TextStyle(
-                                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
-                            doneStyle: TextStyle(color: Colors.white, fontSize: 16)),
-                        onChanged: (date) {
-                          print('change $date in time zone ' + date.timeZoneOffset.inHours.toString());
-                        }, onConfirm: (date) {
-                          print('confirm $date');
-                        }, currentTime: DateTime.now(), locale: LocaleType.en);
+                    addInfo();
+                    _formKey.currentState.validate();
+                    for (var e in formList1) {
+                      printInfo(e);
+                    }
+                    print('${tableInfo}');
                   },
                   child: Text(
-                    'show date picker(custom theme &date time range)',
-                    style: TextStyle(color: Colors.blue),
-                  )),
-              MaterialButton(
-                color: Colors.green,
-                onPressed: () {
-                  addInfo();
+                    'Submit',
+                    style: TextStyle(color: Colors.white),
+                  ),
 
-                  for (var e in formList1) {
-                    printInfo(e);
-                  }
-                  print('${tableInfo}');
-                },
-                child: Text(
-                  'Submit',
-                  style: TextStyle(color: Colors.white),
-                ),
-
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

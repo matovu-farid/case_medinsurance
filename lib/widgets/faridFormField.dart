@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 class FaridFormField extends StatefulWidget {
   final String text;
   final Function onSaved;
-  final FormFieldValidator validator;
-  Function disabled =()=>false;
+  final FieldValidator<String> validator;
+  Function disabled = () => false;
   final bool isDate;
 
   final bool isRadioBtton;
@@ -16,17 +17,23 @@ class FaridFormField extends StatefulWidget {
   final bool isCollapsed;
   final String hint;
 
+  //final bool isEmail;
+
   final Key key;
-   int index = 0;
-   int groupValue = 0;
+  int index = 0;
+  int groupValue = 0;
+
 //   TextEditingController controller;
 // static GlobalKey<FormFieldState> dropKey= GlobalKey<FormFieldState>();
 
-  dynamic textGot ='';
+  dynamic textGot = '';
   String selectedItem;
   final InputDecoration decoration;
+  final String description;
+  final double fieldHieght;
 
   FaridFormField({
+    //this.isEmail,
     this.text,
     this.validator,
     this.onSaved,
@@ -37,7 +44,10 @@ class FaridFormField extends StatefulWidget {
     this.isCollapsed = true,
     this.hint,
     this.key,
-     this.decoration, this.isDate=false,
+    this.decoration,
+    this.isDate = false,
+    this.description = 'normal',
+    this.fieldHieght=25,
   }) : super(key: key);
 
   @override
@@ -59,15 +69,14 @@ class FaridFormFieldState extends State<FaridFormField> {
 //  }
 
   RadioListTile radioTileBulder(String textGot, int value) {
-    widget.textGot=widget.groupValue;
+    widget.textGot = widget.groupValue;
 //    (FaridFormField.index != 0) ? FaridFormField.index++ : FaridFormField.index =0;
     final RadioListTile tile = RadioListTile(
-
       title: Text(textGot),
       onChanged: (value) {
         setState(() {
           widget.groupValue = value;
-          widget.textGot=value;
+          widget.textGot = value;
         });
       },
       value: value,
@@ -83,13 +92,9 @@ class FaridFormFieldState extends State<FaridFormField> {
         value: dropdownName, child: Text(dropdownName));
   }
 
-
-
-
   @override
   Widget build(BuildContext context) {
     if (widget.isDropdown) {
-
       List<DropdownMenuItem<String>> dropItems = [
         ...widget.dropdownNames.map((name) => DropdownMenuItem<String>(
               value: name,
@@ -110,26 +115,23 @@ class FaridFormFieldState extends State<FaridFormField> {
               return Flexible(
                 flex: 7,
                 child: DropdownButtonFormField<String>(
-                  //key: FaridFormField.dropKey,
+                    //key: FaridFormField.dropKey,
 //                  onSaved: (value){
 //                    widget.textGot=value;
 //                  },
                     isDense: widget.isCollapsed,
                     value: widget.selectedItem,
                     onChanged: (value) {
-
                       setState(() {
-                        widget.textGot=value;
+                        widget.textGot = value;
 
                         widget.selectedItem = value;
-
                       });
                     },
                     items: dropItems ??
                         [
                           DropdownMenuItem(
                             child: Text('hello'),
-
                           )
                         ]),
               );
@@ -165,15 +167,12 @@ class FaridFormFieldState extends State<FaridFormField> {
         ],
       );
     }
-    if(widget.isDate)
+    if (widget.isDate)
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-
         children: [
-          Flexible(
-            flex: 3,
-              child: Text("${widget.text??''}")),
+          if (widget.text != null)
+          Flexible(flex: 3, child: Text("${widget.text }")),
 //          SizedBox(
 //            height: 10,
 //            width: 50,
@@ -181,34 +180,45 @@ class FaridFormFieldState extends State<FaridFormField> {
 
           Flexible(
             flex: 7,
-            child: TextFormField(
+            child: Container(
+              height: widget.fieldHieght,
+              child: TextFormField(
+                expands: true,
+                minLines: null,
+                maxLines: null,
+                //focusNode: FocusNode(canRequestFocus: false),
+                readOnly: true,
 
-              //focusNode: FocusNode(canRequestFocus: false),
-              readOnly: true,
-
-              decoration: InputDecoration(hintText:(widget.textGot=='')?'Tap Here':widget.textGot ,
-              helperStyle: TextStyle(color: Colors.black,inherit: false),),
-              onTap: () {
-                DatePicker.showDatePicker(context,
-                    showTitleActions: true,
-                    minTime: DateTime(1930, 1, 1),
-                    maxTime: DateTime(2050, 1, 1),
-                    theme: DatePickerTheme(
-                        headerColor: Colors.orange,
-                        backgroundColor: Colors.green,
-                        itemStyle: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
-                        doneStyle: TextStyle(color: Colors.white, fontSize: 16)),
-                onChanged: (date) {
-
-              setState(() {
-                widget.textGot='${date.day}/${date.month}/${date.year}';
-              });},
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  isCollapsed: true,
+                  hintText: (widget.textGot == '') ? '' : widget.textGot,
+                  helperStyle: TextStyle(color: Colors.black, inherit: false),
+                ),
+                onTap: () {
+                  DatePicker.showDatePicker(context,
+                      showTitleActions: true,
+                      minTime: DateTime(1930, 1, 1),
+                      maxTime: DateTime(2050, 1, 1),
+                      theme: DatePickerTheme(
+                          headerColor: Colors.orange,
+                          backgroundColor: Colors.green,
+                          itemStyle: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                          doneStyle:
+                              TextStyle(color: Colors.white, fontSize: 16)),
+                      onChanged: (date) {
+                    setState(() {
+                      widget.textGot = '${date.day}/${date.month}/${date.year}';
+                    });
+                  },
 //
-                    currentTime: DateTime.now(),
-                    locale: LocaleType.en);
-              },
-
+                      currentTime: DateTime.now(),
+                      locale: LocaleType.en);
+                },
+              ),
             ),
           ),
         ],
@@ -217,37 +227,73 @@ class FaridFormFieldState extends State<FaridFormField> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        if(widget.text!=null)
-        Flexible(
-          flex: 3,
-          child: Text('${widget.text} : '),
-        ),
+        if (widget.text != null)
+          Flexible(
+            flex: 3,
+            child: Text('${widget.text} '),
+          ),
         Flexible(
           flex: 7,
-          child: TextFormField(
+          child: Container(
+            height: widget.fieldHieght,
+            child: TextFormField(
+              expands: true,
+              maxLines: null,
+              minLines: null,
 //            textInputAction: TextInputAction.,
 //            keyboardType: TextInputType.multiline,
-            onSaved: (value) {},
+              onSaved: (value) {},
 
-            onChanged: (value) {
-              widget.textGot=value;
-            },
-            validator: widget.validator == null
-                ? (value) {
-                    return value.isEmpty ? 'Fill in the ${widget.text}' : null;
-                  }
-                : widget.validator,
+              onChanged: (value) {
+                widget.textGot = value;
+              },
+              validator: (value) {
+                switch (widget.description) {
+                  case 'email':
+                    return MultiValidator(<FieldValidator>[
+                      EmailValidator(errorText: 'Enter a valid email'),
+                      RequiredValidator(errorText: 'This field is required')
+                    ]).call(value);
+                    break;
+                  case 'Phone number':
+                    return MultiValidator([
+                      PhoneValidator('Enter a valid Phone number'),
+                      RequiredValidator(errorText: 'This field is required'),
+                    ]).call(value);
+                    break;
+                  case 'required':
+                    return RequiredValidator(errorText: 'This field is required')
+                        .call(value);
+                    break;
 
-            decoration: widget.decoration ?? InputDecoration(
-                isDense: true,
-                isCollapsed: widget.isCollapsed,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(width: 3, color: Colors.black),
-                )),
+                  default:
+                    return null;
+                }
+              },
+
+              decoration: widget.decoration ??
+                  InputDecoration(
+                      isDense: true,
+                      isCollapsed: widget.isCollapsed,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(width: 3, color: Colors.black),
+                      )),
+            ),
           ),
         )
       ],
     );
+  }
+}
 
+class PhoneValidator extends TextFieldValidator {
+  PhoneValidator(String errorText) : super(errorText);
+
+  @override
+  bool isValid(String value) {
+    // return true if the value is valid according the your condition
+    String phoneNumber = r'[(^\D)(\w)](^(0(\d{9}))$)|(^((\+)(\d{11,12}))$)';
+
+    return hasMatch('${phoneNumber}', value);
   }
 }

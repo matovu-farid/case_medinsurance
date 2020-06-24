@@ -19,17 +19,21 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
   final Map<String, FaridFormField> formMap = {
     'Company': FaridFormField(
       text: 'Company',
+        description: 'required'
     ),
 
 
     'Phone No': FaridFormField(
       text: 'Phone No:',
+        description: 'Phone number'
     ),
     'Address': FaridFormField(
       text: 'Address',
+        description: 'required'
     ),
     'Most visited provider': FaridFormField(
       text: 'Most visited provider',
+        description: 'required'
     ),
     'Other provider visited': FaridFormField(
       text: 'Other provider visited',
@@ -60,8 +64,8 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
   }
   int groupValue=0;
   FaridFormField cardField= FaridFormField(
-  text: 'fill your card number:',
-
+  text: 'Card number:',
+      description: 'required'
   );
 
 
