@@ -1,8 +1,6 @@
 import 'package:case_app/screens/products_and_services.dart';
 import 'package:case_app/widgets/faridFormField.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
 class ApplicationForm extends StatefulWidget {

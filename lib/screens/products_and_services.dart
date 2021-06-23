@@ -20,7 +20,7 @@ final productServicesList=[
   'Medical Sensitization/Talks'
 
 ];
-static final partImage = Image.asset('assets/images/CASE-LOGO-full.png');
+static final partImage = Image.asset('assets/icon/icon.png');
   @override
   Widget build(BuildContext context) {
    return Scaffold(

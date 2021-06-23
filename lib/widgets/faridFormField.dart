@@ -138,20 +138,22 @@ class FaridFormFieldState extends State<FaridFormField> {
             }
             return Flexible(
               flex: 7,
-              child: DropdownButton(
-                  hint: Text(widget.hint),
-                  value: widget.selectedItem,
-                  onChanged: (value) {
-                    setState(() {
-                      widget.selectedItem = value;
-                    });
-                  },
-                  items: dropItems ??
-                      [
-                        DropdownMenuItem(
-                          child: Text('hello'),
-                        )
-                      ]),
+              child: FittedBox(
+                child: DropdownButton(
+                    hint: Text(widget.hint),
+                    value: widget.selectedItem,
+                    onChanged: (value) {
+                      setState(() {
+                        widget.selectedItem = value;
+                      });
+                    },
+                    items: dropItems ??
+                        [
+                          DropdownMenuItem(
+                            child: Text('hello'),
+                          )
+                        ]),
+              ),
             );
           }),
         ],

@@ -136,8 +136,7 @@ class QuotationRequestState extends State<QuotationRequest> {
                 flex: 1,
                 child: Row(
                   children: <Widget>[
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 2.5,
+                    Flexible(
                       child: RadioListTile(
                           title: Text('Corporate'),
                           value: 1,
@@ -148,8 +147,7 @@ class QuotationRequestState extends State<QuotationRequest> {
                             });
                           }),
                     ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width / 2.5,
+                    Flexible(
                       child: RadioListTile(
                           title: Text('Individual'),
                           value: 0,

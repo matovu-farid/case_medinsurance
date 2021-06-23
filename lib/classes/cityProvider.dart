@@ -12,6 +12,7 @@ import 'package:rxdart/rxdart.dart';
 
 import '../citiies.dart';
 import 'converter.dart';
+import 'my_marker.dart';
 
 class CityProviders extends NetworkBloc {
   NearHospitalNetworkBloc hospitalBloc;
@@ -19,9 +20,10 @@ class CityProviders extends NetworkBloc {
     hospitalBloc = NearHospitalNetworkBloc();
     ref = firestore.collection('cities');
   }
-  var nearbyHospitals = BehaviorSubject<Set<Marker>>();
+  var nearbyHospitals = BehaviorSubject<Set<MyMarker>>();
 
   Position get currentCity => hospitalBloc.centerPosition;
+
   void setcurrentCity(Position city) {
     hospitalBloc.centerPosition = city;
     hospitalBloc.getMarkers().forEach((element) {
@@ -37,7 +39,7 @@ class CityProviders extends NetworkBloc {
     }
   }
 
-  Stream<Set<Marker>> get nearbyHospitalsStream => nearbyHospitals.stream;
+  Stream<Set<MyMarker>> get nearbyHospitalsStream => nearbyHospitals.stream;
 
   @override
   Set<Marker> docToMarker(List<DocumentSnapshot> documents) {
@@ -90,22 +92,25 @@ class NearHospitalNetworkBloc {
   GeoFirePoint get center => geo.point(
       latitude: centerPosition.latitude, longitude: centerPosition.longitude);
 
-  Stream<Set<Marker>> getMarkers() {
+  Stream<Set<MyMarker>> getMarkers() {
     return geo
         .collection(collectionRef: ref)
         .within(center: center, radius: 5, field: 'position', strictMode: true)
         .map(docToMarker);
   }
 
-  Set<Marker> docToMarker(List<DocumentSnapshot> documents) => documents.map((doc) {
+  Set<MyMarker> docToMarker(List<DocumentSnapshot> documents) {
+    var markers = documents.map((doc) {
       GeoPoint point = doc.data()['position']['geopoint'];
       var distance = center.distance(lat: point.latitude, lng: point.longitude);
 
-     return Marker(
+      return MyMarker(
           markerId: MarkerId(doc.id),
           position: LatLng(point.latitude, point.longitude),
           infoWindow: InfoWindow(
               title: doc.data()['name'], snippet: '$distance km from you'));
     }).toSet();
-
+    _logger.info(markers);
+    return markers;
+  }
 }
