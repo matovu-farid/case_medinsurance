@@ -1,0 +1,1417 @@
+{
+  "features": [
+    {
+      "coordinates": [32.62258449999999, 0.3194037],
+      "properties": {
+        "id": "0EBEE932591B5F74D6A1",
+        "name": "Bugolobi Medical Center",
+      "phonenumber": ""}
+    },
+    {
+      "coordinates": [32.6273829, 0.3183424],
+      "properties": {
+        "id": "04AAB6A3A61B5F75A465",
+        "name": "Silver Springs Hotel, Bugo,lobi",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [32.6033521, 0.3499487],
+      "properties": {
+        "id": "0479D68B021B5F776538",
+        "name": "UMC VICTORIA HOSPITAL"
+   ,
+      "phonenumber": "0782132011"}
+    },
+    {
+      "coordinates": [32.6640594, 0.3525621],
+      "properties": {
+        "id": "002343D7061B5F83DD83",
+        "name": "Marie Stopes Uganda - Bwey,ogerere",
+        "phonenumber": "0759004933"
+      }
+    },
+    {
+      "coordinates": [32.6264208, 0.320708],
+      "properties": {
+        "id": "071EB94A771B5F868384",
+        "name": "AAR Bugolobi Health Centre,",
+        "phonenumber": "0754247352"
+      }
+    },
+    {
+      "coordinates": [32.6152497, 0.3518168],
+      "properties": {
+        "id": "0E8CE070281B5F86CD49",
+        "name": "AAR Ntinda Healthcentre"
+ ,
+      "phonenumber": "0414540600"}
+    },
+    {
+      "coordinates": [32.6142805, 0.3041687],
+      "properties": {
+        "id": "0B0DB703261B5F879C43",
+        "name": "Marie Stopes"
+      }
+    ,
+    "phonenumber": "0759004933"},
+    {
+      "coordinates": [32.5678082, 0.3456987],
+      "properties": {
+        "id": "004B4399171B5F886134",
+        "name": "Marie Stopes Clinic"
+     ,
+      "phonenumber": "0759004933"}
+    },
+    {
+      "coordinates": [32.5751452, 0.3247055],
+      "properties": {
+        "id": "06F3EC02BB1B5F88DA2D",
+        "name": "Case Medical Centre"
+     ,
+      "phonenumber": "0312250700"}
+    },
+    {
+      "coordinates": [32.5687497, 0.3385262],
+      "properties": {
+        "id": "06F667541B1B5F8970F4",
+        "name": "Case Hospital"
+      }
+   ,
+    "phonenumber": "0701250362"},
+    {
+      "coordinates": [32.4647391, 0.0551784],
+      "properties": {
+        "id": "081D8388B81B5F8D62EC",
+        "name": "Victoria Medical Services",
+        "phonenumber": "0772449377"
+      }
+    },
+    {
+      "coordinates": [32.5520465, 0.2318361],
+      "properties": {
+        "id": "0F54A6EF941B5F8EE790",
+        "name": "Doctors' Hospital Sseguku",
+        "phonenumber": "0759523453"
+      }
+    },
+    {
+      "coordinates": [32.6123575, 0.4467816],
+      "properties": {
+        "id": "089A0B22581B5F8F6D64",
+        "name": "Peoples Medical Hospital G,ayaza",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [32.584661, 0.3326896],
+      "properties": {
+        "id": "0FDD3BB1FA1B5F8FF860",
+        "name": "Kampala Hospital"
+      }
+,
+    "phonenumber": "0776433199"},
+    {
+      "coordinates": [32.6022952, 0.4386051],
+      "properties": {
+        "id": "04ECFAF42F1B5F907CAE",
+        "name": "Agape Medical Centre"
+    ,
+      "phonenumber": "0755888950"}
+    },
+    {
+      "coordinates": [32.5613888, 0.3645765],
+      "properties": {
+        "id": "022F2814E11B5F917C8A",
+        "name": "Medik Hospital Kawempe"
+  ,
+      "phonenumber": "0772589897"}
+    },
+    {
+      "coordinates": [32.5805488, 0.3372473],
+      "properties": {
+        "id": "0F35C037D61B5F928652",
+        "name": "Busingye Medical Centre"
+ ,
+      "phonenumber": ""}
+    },
+    {
+      "coordinates": [32.64957, 0.34655],
+      "properties": {
+        "id": "0F299415C21B5F970F4C",
+        "name": "Ssan Medical Clinic"
+     ,
+      "phonenumber": "0779209022"}
+    },
+    {
+      "coordinates": [32.5369205, 0.1218417],
+      "properties": {
+        "id": "06D161ADD41B5F97F0D2",
+        "name": "Kisubi Hospital (Our Lady ,of Consolata Kisubi Hospital)",
+        "phonenumber": "0702345402"
+      }
+    },
+    {
+      "coordinates": [32.5966205, 0.3231937],
+      "properties": {
+        "id": "081A7B17761B5F989278",
+        "name": "Pulse Specialist Clinic"
+ ,
+      "phonenumber": "0785121878"}
+    },
+    {
+      "coordinates": [32.6112222, 0.3047931],
+      "properties": {
+        "id": "0C382023591B5FAEC194",
+        "name": "International Hospital Kam,pala",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [32.6111093, 0.3539187],
+      "properties": {
+        "id": "0B7C78334D1B5FAFB55A",
+        "name": "Life Link Hospital Ntinda",
+        "phonenumber": "0712965505"
+      }
+    },
+    {
+      "coordinates": [32.601344, 0.3269719],
+      "properties": {
+        "id": "05F5731DBD1B5FB2C95D",
+        "name": "International Medical Cent,er (IMC) Kololo",
+        "phonenumber": "0313200402"
+      }
+    },
+    {
+      "coordinates": [32.6145501, 0.3530649],
+      "properties": {
+        "id": "0D94841E041B5FB3AC04",
+        "name": "IMC Ntinda",
+        "phonenumber":"0392176520"
+      }
+    },
+
+    {
+      "coordinates": [32.5751879, 0.3184252],
+      "properties": {
+        "id": "0F4C75ED171B5FB42859",
+        "name": "IMC Park Royal"
+      }
+  ,
+    "phonenumber": "0312341291"},
+    {
+      "coordinates": [32.5704309, 0.316609],
+      "properties": {
+        "id": "0686336C971B5FB5FE7D",
+        "name": "AIA Health Centre"
+      },
+      "phonenumber": "0772499783"
+    },
+    {
+      "coordinates": [32.6503858, 0.3011148],
+      "properties": {
+        "id": "05A5433A9C1B5FB6C696",
+        "name": "Bethany Women's and Family, Hospital",
+        "phonenumber": "0200903746"
+      }
+    },
+    {
+      "coordinates": [32.5937904, 0.3001356],
+      "properties": {
+        "id": "0F6FDE78061B5FB7BC6B",
+        "name": "Kampala Family Clinic (kfc,)",
+        "phonenumber": "0312265525"
+      }
+    },
+    {
+      "coordinates": [32.6189581, 0.3561700999999999],
+      "properties": {
+        "id": "0EAB8315661B5FB884B6",
+        "name": "Ntinda Family Doctors"
+   ,
+      "phonenumber": "0774176060"}
+    },
+    {
+      "coordinates": [32.5621782, 0.3073687],
+      "properties": {
+        "id": "0D36263BE61B5FB9A14E",
+        "name": "Kampala West Medical Clini,c",
+        "phonenumber": "0702269676"
+      }
+    },
+    {
+      "coordinates": [32.5589359, 0.3125439],
+      "properties": {
+        "id": "018EA5A68D1B5FBB81E9",
+        "name": "Mengo Hospital"
+      }
+  ,
+    "phonenumber": "0783739907"},
+    {
+      "coordinates": [32.6227462, 0.3187304],
+      "properties": {
+        "id": "078ECDD6981B5FBC9A14",
+        "name": "Middle East Hospital Bugol,obi",
+        "phonenumber": "0752504777"
+      }
+    },
+    {
+      "coordinates": [32.5083964, 0.3878431],
+      "properties": {
+        "id": "0DD799F8771B5FBE31BC",
+        "name": "Naluvule Medical Center"
+ ,
+      "phonenumber": "0775703390"}
+    },
+    {
+      "coordinates": [32.586963, 0.3009029],
+      "properties": {
+        "id": "04CD80226A1B5FBF0393",
+        "name": "Nsambya Hospital"
+      }
+,
+    "phonenumber": "0712267339"},
+    {
+      "coordinates": [32.5334455, 0.3553368],
+      "properties": {
+        "id": "0CFEC7E05E1B5FC05EDA",
+        "name": "Sebbi Medical Center"
+    ,
+      "phonenumber": "0701056128"}
+    },
+    {
+      "coordinates": [32.48105260000001, 0.3313153],
+      "properties": {
+        "id": "08A403F9331B5FC1EB47",
+        "name": "St Joseph Medical Centre B,uloba",
+        "phonenumber": "0702372009"
+      }
+    },
+    {
+      "coordinates": [32.5922564, 0.342121],
+      "properties": {
+        "id": "0A05A8F96E1B5FC39B70",
+        "name": "Kay's Dental Clinic Kamwok,ya",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [32.5532137, 0.3038142],
+      "properties": {
+        "id": "0925B6C6141B5FC494F0",
+        "name": "Lubaga Hospital"
+      }
+ ,
+    "phonenumber": "0706294144"},
+    {
+      "coordinates": [32.6422316, 0.372412],
+      "properties": {
+        "id": "08817B0F571B5FC56801",
+        "name": "Naalya Children's Clinic ",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [32.5829219, 0.4010819],
+      "properties": {
+        "id": "0E36C449171B5FC67B9C",
+        "name": "The Royal children's Medic,al Center",
+        "phonenumber": "0701611772"
+
+      }
+    },
+    {
+      "coordinates": [32.6022952, 0.4386051],
+      "properties": {
+        "id": "0D01A971D31B5FC6FA65",
+        "name": "Agape Medical Centre"
+    ,
+      "phonenumber": "0755888950"}
+    },
+    {
+      "coordinates": [32.6136146, 0.4528367999999999],
+      "properties": {
+        "id": "0BC903D5151B5FC86B7A",
+        "name": "Peoples Medical Centre"
+  ,
+      "phonenumber": ""}
+    },
+    {
+      "coordinates": [32.5640255, 0.2557887],
+      "properties": {
+        "id": "0C21B41ABD1B5FCA78F1",
+        "name": "Henrob Medical Centre"
+   ,
+      "phonenumber": "0757104596"}
+    },
+    {
+      "coordinates": [32.552032, 0.2262117],
+      "properties": {
+        "id": "09FA40260A1B5FCB56FC",
+        "name": "Bethany Clinic Mildmay Uga,nda Hospital",
+        "phonenumber": "0772660075"
+      }
+    },
+    {
+      "coordinates": [32.4639713, 0.05109869999999999],
+      "properties": {
+        "id": "0888E166601B5FCC195F",
+        "name": "Victoria medical services",
+        "phonenumber": "0793782496"
+      }
+    },
+    {
+      "coordinates": [32.7487957, 0.3591695999999999],
+      "properties": {
+        "id": "0907C0D32E1B5FCD6CEF",
+        "name": "Vine medical center"
+     ,
+      "phonenumber": "0772435348"}
+    },
+    {
+      "coordinates": [32.7535747, 0.3570939],
+      "properties": {
+        "id": "0B4D4016811B5FCF2430",
+        "name": "ESERI CLINIC"
+      }
+    ,
+    "phonenumber": "0772491589"},
+    {
+      "coordinates": [32.53258690000001, 0.7205165000000001],
+      "properties": {
+        "id": "0A3EE1F6031B5FD3AD3A",
+        "name": "Orient medical center wobu,lenzi ",
+        "phonenumber": "0771674850"
+      }
+    },
+    {
+      "coordinates": [32.9014, 2.2555],
+      "properties": {
+        "id": "0CBFA47EC21B5FE9AAAB",
+        "name": "Lira Medical Centre"
+     ,
+      "phonenumber": "0772466796"}
+    },
+    {
+      "coordinates": [32.8906218, 2.2400308],
+      "properties": {
+        "id": "076801FCAC1B5FEA3994",
+        "name": "Ronam Health Care Clinic"
+,
+      "phonenumber": "0772686442"}
+    },
+    {
+      "coordinates": [32.463708, 1.3118981],
+      "properties": {
+        "id": "07725D25BA1B5FEB2211",
+        "name": "Bulamu Medical Clinic, Nak,asongola",
+        "phonenumber": "0772847216"
+      }
+    },
+    {
+      "coordinates": [33.2175, 0.4587],
+      "properties": {
+        "id": "0496B1D0D71B5FEC68D3",
+        "name": "Al-Shafa Medical Centre Ho,spital",
+        "phonenumber": "0712480439"
+      }
+    },
+    {
+      "coordinates": [34.0862912, 2.9990409],
+      "properties": {
+        "id": "093DE8A75A1B5FEE91E9",
+        "name": "KANAWAT MISSION HEALTH CEN,TRE III",
+        "phonenumber": "0782966941"
+      }
+    },
+    {
+      "coordinates": [34.59713199999999, 1.9606173],
+      "properties": {
+        "id": "0DCFFD928E1B5FEF7816",
+        "name": "Rainbow clinic Nakapiripir,it",
+        "phonenumber": "0784678262"
+      }
+    },
+    {
+      "coordinates": [33.9750018, 3.5126215],
+      "properties": {
+        "id": "0F05D53A111B5FF112B3",
+        "name": "Precise Medical Services K,aabong",
+        "phonenumber": "0774409388"
+      }
+    },
+    {
+      "coordinates": [34.6575425, 2.526925],
+      "properties": {
+        "id": "0CD9E7C05A1B5FF1A245",
+        "name": "Loima Medi-Care Clinic"
+  ,
+      "phonenumber": ""}
+    },
+    {
+      "coordinates": [34.6575425, 2.526925],
+      "properties": {
+        "id": "0296B263581B5FF223F9",
+        "name": "Loima Medi-Care Clinic"
+  ,
+      "phonenumber": "0782748313"}
+    },
+    {
+      "coordinates": [34.6718122, 2.5295115],
+      "properties": {
+        "id": "008061DEDF1B5FF37F65",
+        "name": "Fitzman Medical Services. ,Moroto",
+        "phonenumber": "0774309908"
+      }
+    },
+    {
+      "coordinates": [32.3012635, 2.7703546],
+      "properties": {
+        "id": "0CBE0A04271B5FF450EF",
+        "name": "Fitzman Medical and Dental, Clinic Gulu",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [34.3940735, 2.4433738],
+      "properties": {
+        "id": "07F256CE501B5FF55EFE",
+        "name": "St. Kizito Hospital - Mata,ny",
+        "phonenumber": "0782030308"
+      }
+    },
+    {
+      "coordinates": [32.253336, 2.7676084],
+      "properties": {
+        "id": "0268FB256F1B5FF699E7",
+        "name": "St. Marys Lacor Hospital"
+,
+      "phonenumber": "0772365480"}
+    },
+    {
+      "coordinates": [32.8789499, 3.2884847],
+      "properties": {
+        "id": "040FE1B6CA1B5FF7D7CE",
+        "name": "St. Joseph Hospital Kitgum, ",
+        "phonenumber": "0772054720"
+      }
+    },
+    {
+      "coordinates": [33.16888830000001, 3.3396829],
+      "properties": {
+        "id": "02D9F379B21B5FF8A39C",
+        "name": "Kitgum Maternity & Medical, Centre ",
+        "phonenumber": "0783771363"
+      }
+    },
+    {
+      "coordinates": [32.3001799, 2.7744218],
+      "properties": {
+        "id": "091316BA661B5FF9AAA7",
+        "name": "Kony Paco Medical Centre ",
+        "phonenumber": "0774592011"
+      }
+    },
+    {
+      "coordinates": [33.08602, 2.8825838],
+      "properties": {
+        "id": "0BE6276E861B5FFA46B4",
+        "name": "ULTIMATE CHOICE CLINIC"
+  ,
+      "phonenumber": "0779510133"}
+    },
+    {
+      "coordinates": [33.0843723, 2.8751077],
+      "properties": {
+        "id": "0315A3DBEA1B5FFB05D3",
+        "name": "Numem Health Care Clinic ",
+        "phonenumber": "0713234148"
+      }
+    },
+    {
+      "coordinates": [33.3486147, 2.925082],
+      "properties": {
+        "id": "09E31B4D861B5FFC59D3",
+        "name": "St. Ambrosoli Hospital "
+ ,
+      "phonenumber": "0772997634"}
+    },
+    {
+      "coordinates": [33.3486147, 2.925082],
+      "properties": {
+        "id": "065D6102D41B5FFCD028",
+        "name": "St. Ambrosoli Hospital Aga,go",
+        "phonenumber": "0772997634"
+      }
+    },
+    {
+      "coordinates": [34.9437716, 1.9534181],
+      "properties": {
+        "id": "0913B58E2D1B5FFDF77B",
+        "name": "Amudat Joint Clinic "
+    ,
+      "phonenumber": "0782715471"}
+    },
+    {
+      "coordinates": [32.5344456, 1.9850906],
+      "properties": {
+        "id": "033F4277B51B5FFEEBB8",
+        "name": "Lavita Medicare Apac"
+    ,
+      "phonenumber": "0752390197"}
+    },
+    {
+      "coordinates": [30.9847642, 2.4183904],
+      "properties": {
+        "id": "080976A6201B60008547",
+        "name": "Rhema Medical Centre Paidh,a",
+        "phonenumber": "0773797310"
+      }
+    },
+    {
+      "coordinates": [31.0985066, 2.4810264],
+      "properties": {
+        "id": "063D64BB521B6001CA89",
+        "name": "Pubungu Modern Clinic"
+   ,
+      "phonenumber": "0777060854"}
+    },
+    {
+      "coordinates": [31.6739371, 3.5696464],
+      "properties": {
+        "id": "0445D75C241B6002D1AF",
+        "name": "St. Dominic basic health s,ervices Moyo",
+        "phonenumber": "0772362482"
+      }
+    },
+    {
+      "coordinates": [30.907304, 3.0303299],
+      "properties": {
+        "id": "07F2F134121B6003CF18",
+        "name": "Marie Stopes (Adumi Road) ,Arua",
+        "phonenumber": "0759004032"
+      }
+    },
+    {
+      "coordinates": [30.9136146, 2.9932762],
+      "properties": {
+        "id": "0EF903DF3F1B6004B9B6",
+        "name": "Rhema Hospital Arua"
+     ,
+      "phonenumber": "0782832628"}
+    },
+    {
+      "coordinates": [31.3541631, 3.5468191],
+      "properties": {
+        "id": "0C9B8216B61B6006C3CC",
+        "name": "Pearl Medical Centre Yumbe,",
+        "phonenumber": "0782287860"
+      }
+    },
+    {
+      "coordinates": [31.78222779999999, 3.3783808],
+      "properties": {
+        "id": "044BD7ADB81B6007C65A",
+        "name": "Victoria Medical Clinic Ad,jumani",
+        "phonenumber": "0782254830"
+      }
+    },
+    {
+      "coordinates": [31.78222779999999, 3.3783808],
+      "properties": {
+        "id": "0323587FA61B6008C550",
+        "name": "Discovery Medical Center"
+,
+      "phonenumber": "0772452882"}
+    },
+    {
+      "coordinates": [31.7905648, 3.3808334],
+      "properties": {
+        "id": "09055D6EB51B6011D3E9",
+        "name": "Kristo Medical Centre "
+  ,
+      "phonenumber": "0777363201"}
+    },
+    {
+      "coordinates": [33.6930855, 3.5690813],
+      "properties": {
+        "id": "0E005BDEAF1B6012FE90",
+        "name": "Jehovah Nissi Clinic Karen,ga",
+        "phonenumber": "0782969312"
+      }
+    },
+    {
+      "coordinates": [34.0833, 3.716699999999999],
+      "properties": {
+        "id": "06669A10771B60155708",
+        "name": "Morulem Health Centre "
+  ,
+      "phonenumber": "0774855001"}
+    },
+    {
+      "coordinates": [32.9381321, 0.3739085],
+      "properties": {
+        "id": "075A5FFD1D1B601681F0",
+        "name": "Kulabako Moscow Clinic Lug,azi",
+        "phonenumber": "0772385870"
+      }
+    },
+    {
+      "coordinates": [33.4719832, 0.6045832999999999],
+      "properties": {
+        "id": "0B2B000F4D1B60185AE4",
+        "name": "Hovic Medical Centre Igang,a",
+        "phonenumber": "0704887938"
+      }
+    },
+    {
+      "coordinates": [33.4719832, 0.6045832999999999],
+      "properties": {
+        "id": "0791D3171A1B6031E6FA",
+        "name": "Hovic Medical Centre Igang,a",
+        "phonenumber": "0704887938"
+      }
+    },
+    {
+      "coordinates": [33.210989, 0.4278541],
+      "properties": {
+        "id": "0F6DE17FA71B6033CA2F",
+        "name": "Rippon Medical Centre "
+  ,
+      "phonenumber": "0773168162"}
+    },
+    {
+      "coordinates": [33.2007682, 0.4349509],
+      "properties": {
+        "id": "06008CA8CD1B60351D77",
+        "name": "Rana Medical Centre"
+     ,
+      "phonenumber": "0752646225"}
+    },
+    {
+      "coordinates": [33.7549735, 0.5660599],
+      "properties": {
+        "id": "04E1817FC11B60369940",
+        "name": "Fast Line Medical Centre"
+,
+      "phonenumber": "0772664318"}
+    },
+    {
+      "coordinates": [34.0892, 0.4730999999999999],
+      "properties": {
+        "id": "0DF1E1DBEA1B6049D8D1",
+        "name": "Nabulola Health Centre"
+  ,
+      "phonenumber": "0772885919"}
+    },
+    {
+      "coordinates": [34.0892, 0.4730999999999999],
+      "properties": {
+        "id": "0A9DE0585A1B604AA193",
+        "name": "Nabulola Medical Centre"
+ ,
+      "phonenumber": ""}
+    },
+    {
+      "coordinates": [34.1865669, 0.6782273999999999],
+      "properties": {
+        "id": "0956655C781B604C2172",
+        "name": "Divine Mercy Hospital"
+   ,
+      "phonenumber": "0772413166"}
+    },
+    {
+      "coordinates": [34.1865669, 0.6782273999999999],
+      "properties": {
+        "id": "035DDD68CD1B604D2293",
+        "name": "Marie Stopes Tororo"
+     ,
+      "phonenumber": "0759004053"}
+    },
+    {
+      "coordinates": [34.183265, 1.0685775],
+      "properties": {
+        "id": "094738D2DE1B604D7FAC",
+        "name": "Mount Elgon Hospital"
+    ,
+      "phonenumber": "0700828081"}
+    },
+    {
+      "coordinates": [33.617883, 1.715154],
+      "properties": {
+        "id": "0103F0B69A1B604E0C90",
+        "name": "Joint Clinic"
+      }
+    ,
+    "phonenumber": "0772444615"},
+    {
+      "coordinates": [33.6054772, 1.7195903],
+      "properties": {
+        "id": "0825F163BF1B604E7FC5",
+        "name": "Soroti Medical Associates",
+        "phonenumber": "0772535822"
+      }
+    },
+    {
+      "coordinates": [33.6063855, 1.7131812],
+      "properties": {
+        "id": "0A29002C461B604F59C2",
+        "name": "Community Clinic & Imaging, Centre Soroti",
+        "phonenumber": "0772491105"
+      }
+    },
+    {
+      "coordinates": [34.4424927, 1.4007246],
+      "properties": {
+        "id": "0F9696E84A1B6050465A",
+        "name": "Masha Clinic"
+      }
+    ,
+    "phonenumber": "0772984947"},
+    {
+      "coordinates": [33.7098569, 1.1706966],
+      "properties": {
+        "id": "05990541491B60520DCD",
+        "name": "Community Care Medical Ser,vices Pallisa",
+        "phonenumber": "0772491105"
+      }
+    },
+    {
+      "coordinates": [32.043969, 0.4016398],
+      "properties": {
+        "id": "0866D9F3171B60530661",
+        "name": "St. Francis Community MC M,ityana",
+        "phonenumber": "0772422158"
+      }
+    },
+    {
+      "coordinates": [32.04512320000001, 0.4010720999999999],
+      "properties": {
+        "id": "02ADEEAF321B6053774E",
+        "name": "I Jay Medical Centre"
+    ,
+      "phonenumber": "0772843100"}
+    },
+    {
+      "coordinates": [31.3884671, 0.5539012999999999],
+      "properties": {
+        "id": "0FA2A270871B60547176",
+        "name": "Quality Medical Clinic Mub,ende",
+        "phonenumber": "0783023410"
+      }
+    },
+    {
+      "coordinates": [31.3873708, 0.5608409],
+      "properties": {
+        "id": "07D6CF2E8D1B6054E64F",
+        "name": "St.Charles Medical Centre",
+        "phonenumber": "0782227722"
+      }
+    },
+    {
+      "coordinates": [31.7610455, 0.9085227],
+      "properties": {
+        "id": "0A65E19AE21B6055DD8E",
+        "name": "St Peter's Clinic Kiboga"
+,
+      "phonenumber": "0772991350"}
+    },
+    {
+      "coordinates": [30.8172889, 0.9452366000000001],
+      "properties": {
+        "id": "0CDB4F1FE71B60568283",
+        "name": "St. Ambrose Charity HCIV"
+,
+      "phonenumber": "0776025776"}
+    },
+    {
+      "coordinates": [31.3245642, 0.7841032],
+      "properties": {
+        "id": "0DE88A5C3E1B6058921A",
+        "name": "Kakumiro Central Clinic "
+,
+      "phonenumber": "0772460795"}
+    },
+    {
+      "coordinates": [31.5370003, 2.0299607],
+      "properties": {
+        "id": "0D3E54AB691B60598552",
+        "name": "Uganda Martyrs HC IV Bulis,a",
+        "phonenumber": "0783482458"
+      }
+    },
+    {
+      "coordinates": [31.0793705, 0.9066802],
+      "properties": {
+        "id": "03D3DCCD6B1B605A652E",
+        "name": "Emesco Health Centre Kibal,e",
+        "phonenumber": "0775457162"
+      }
+    },
+    {
+      "coordinates": [31.35411779999999, 1.4301022],
+      "properties": {
+        "id": "04AF3E6C671B605AF543",
+        "name": "EDPA MEDICAL SERVICES"
+   ,
+      "phonenumber": "0772471388"}
+    },
+    {
+      "coordinates": [31.34844479999999, 1.4273554],
+      "properties": {
+        "id": "0C98E907C21B605BDD32",
+        "name": "Victoria Clinic Medical Sp,ecialists Hoima",
+        "phonenumber": "0772638333"
+      }
+    },
+    {
+      "coordinates": [31.7138458, 1.6873134],
+      "properties": {
+        "id": "0EF31B1E241B605D53C6",
+        "name": "Ngomokwe Nursing Home (Bug,umu Lane) Masindi",
+        "phonenumber": "0772821982"
+      }
+    },
+    {
+      "coordinates": [31.70800209999999, 1.6791228],
+      "properties": {
+        "id": "0773A9FC901B605DDBF5",
+        "name": "Masindi-Kitara Medical Cen,ter",
+        "phonenumber": "0779777007"
+      }
+    },
+    {
+      "coordinates": [30.2787519, 0.6538472],
+      "properties": {
+        "id": "0CB9EBA42B1B605E4D4C",
+        "name": "Alpine Medical Centre"
+   ,
+      "phonenumber": "0783517020"}
+    },
+    {
+      "coordinates": [30.2788531, 0.654017],
+      "properties": {
+        "id": "06B97E6FF71B605EB477",
+        "name": "Ageteraine Nursing Home"
+ ,
+      "phonenumber": "0772595183"}
+    },
+    {
+      "coordinates": [30.2681743, 0.638062],
+      "properties": {
+        "id": "0903BFEE431B605F0ECE",
+        "name": "Virika Hospital"
+      }
+ ,
+    "phonenumber": "0772666943"},
+    {
+      "coordinates": [30.4818446, 0.225793],
+      "properties": {
+        "id": "0EB183133A1B605FACA3",
+        "name": "Kamwenge Medical Clinic"
+ ,
+      "phonenumber": "0702890303"}
+    },
+    {
+      "coordinates": [30.0636349, 0.707531],
+      "properties": {
+        "id": "0BD0BAC00E1B6060CA1A",
+        "name": "Gaddafi Medical Centre  Bu,ndibugyo",
+        "phonenumber": "0781229699"
+      }
+    },
+    {
+      "coordinates": [30.0778691, 0.175389],
+      "properties": {
+        "id": "0DC9CB769F1B6063482E",
+        "name": "Afya Clinic",
+        "phonenumber":"0772472480"
+      }
+    },
+
+    {
+      "coordinates": [30.401, -0.4509999999999999],
+      "properties": {
+        "id": "093EF642521B60640843",
+        "name": "Bishop Masereka Christian ,Foundation Health Centre IV",
+        "phonenumber": "0703538633"
+      }
+    },
+    {
+      "coordinates": [29.76722, 0.0336885],
+      "properties": {
+        "id": "09020FD5461B60649ED5",
+        "name": "Bwera Hospital"
+      }
+  ,
+    "phonenumber": "0772382204"},
+    {
+      "coordinates": [30.078078, 0.1698986],
+      "properties": {
+        "id": "0957E608631B606524D6",
+        "name": "Kasese Hospital"
+      }
+ ,
+    "phonenumber": "0779525829"},
+    {
+      "coordinates": [30.1833245, 0.2921162],
+      "properties": {
+        "id": "043C94F03E1B60668878",
+        "name": "Hima Clinic",
+        "phonenumber":"0701111159"
+      }
+    },
+
+    {
+      "coordinates": [31.7377689, -0.3411667],
+      "properties": {
+        "id": "0353D4FB871B60673D0C",
+        "name": "Byansi Services Ltd. (OPD ,Clinic & Pharmacy)",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [31.7573017, -0.3442488],
+      "properties": {
+        "id": "0FEB45D06D1B6067A6A8",
+        "name": "Kitovu Hospital"
+      }
+ ,
+    "phonenumber": "0754968068"},
+    {
+      "coordinates": [31.1528438, -0.4073383],
+      "properties": {
+        "id": "05DED809891B606846CD",
+        "name": "Born Medical Centre Clinic,",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [31.1554778, -0.4067911],
+      "properties": {
+        "id": "0F446788291B6068A68F",
+        "name": "Safeka Nursing Home"
+     ,
+      "phonenumber": "0772623673"}
+    },
+    {
+      "coordinates": [30.65252599999999, -0.5868816],
+      "properties": {
+        "id": "075FE750351B6069194C",
+        "name": "Mbarara Community Hospital,",
+        "phonenumber": "0772967596"
+      }
+    },
+    {
+      "coordinates": [30.6459306, -0.6132641999999999],
+      "properties": {
+        "id": "06866BE1C31B60699BCC",
+        "name": "Divine Mercy Hospital (Fat,her Bash Foundation)",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [30.6612419, -0.6158604],
+      "properties": {
+        "id": "0C0B1D61F81B606A9A05",
+        "name": "Mayanja Memorial Hospital",
+        "phonenumber": "0782930500"
+      }
+    },
+    {
+      "coordinates": [30.6476723, -0.6232886999999999],
+      "properties": {
+        "id": "08275B8A941B606B41DB",
+        "name": "Holy Innocent Children's H,ospital",
+        "phonenumber": "0756509444"
+      }
+    },
+    {
+      "coordinates": [30.6310734, -0.6127249],
+      "properties": {
+        "id": "047DDD29771B606B9F04",
+        "name": "Ruharo Mission Hospital"
+ ,
+      "phonenumber": "0701061755"}
+    },
+    {
+      "coordinates": [30.5014352, -0.1061591],
+      "properties": {
+        "id": "0B9C971CC21B606C240C",
+        "name": "Ebenezer Clinic & Diagnost,ic Centre",
+        "phonenumber": "0757169700"
+      }
+    },
+    {
+      "coordinates": [30.53190000000001, -0.1539],
+      "properties": {
+        "id": "052FCDBA4C1B606CE2A4",
+        "name": "Ibanda Hospital"
+      }
+ ,
+    "phonenumber": "0787088100"},
+    {
+      "coordinates": [30.2051096, -0.4870918],
+      "properties": {
+        "id": "02048E88E01B606E2747",
+        "name": "B.B Health Centre Bushenyi,",
+        "phonenumber": "0772657861"
+      }
+    },
+    {
+      "coordinates": [30.1459922, -0.5399817],
+      "properties": {
+        "id": "0948FFD17A1B606F9C55",
+        "name": "KIU Teaching Hospital"
+   ,
+      "phonenumber": "0772507248"}
+    },
+    {
+      "coordinates": [29.6846271, -1.2824726],
+      "properties": {
+        "id": "0C8C19E6A21B6070270C",
+        "name": "Afya Clinic",
+        "phonenumber":"0772438860"
+      }
+    },
+
+    {
+      "coordinates": [29.7201618, -1.2625772],
+      "properties": {
+        "id": "094807939B1B60708702",
+        "name": "Mutolere Hospital"
+      },
+      "phonenumber": "0783647635"
+    },
+    {
+      "coordinates": [30.2656955, -0.8750755],
+      "properties": {
+        "id": "047046146D1B6071499D",
+        "name": "Ahabwe Health Clinic Ntung,amo",
+        "phonenumber": "0772695023"
+      }
+    },
+    {
+      "coordinates": [29.9836285, -1.2447278],
+      "properties": {
+        "id": "00767B40761B6071AD09",
+        "name": "Rugarama Hospital"
+      },
+      "phonenumber": "0773455618"
+    },
+    {
+      "coordinates": [29.98930690000001, -1.251312],
+      "properties": {
+        "id": "0ABB39095D1B6072A178",
+        "name": "Kabale Hospital Private wi,ng",
+        "phonenumber": "0775273584"
+      }
+    },
+    {
+      "coordinates": [29.9919891, -1.253779],
+      "properties": {
+        "id": "09E67C60CC1B6073519E",
+        "name": "Marie Stopes Kabale Center,",
+        "phonenumber": " 0759004901"
+      }
+    },
+    {
+      "coordinates": [29.924903, -0.7911387999999998],
+      "properties": {
+        "id": "087A3EFC1A1B6074663F",
+        "name": "Rujumbura Medcare (Kinyasa,no Road) Rukungiri",
+        "phonenumber": "0772671442"
+      }
+    },
+    {
+      "coordinates": [29.8813918, -0.7956390999999999],
+      "properties": {
+        "id": "0565AFB7161B60759D6C",
+        "name": "Echo Imaging Clinic "
+    ,
+      "phonenumber": "0772909282"}
+    },
+    {
+      "coordinates": [32.568114, 0.3132798],
+      "properties": {
+        "id": "0878C951781B6076906F",
+        "name": "IMC - Namirembe Road Clini,c",
+        "phonenumber": "0392176519"
+      }
+    },
+    {
+      "coordinates": [32.6145501, 0.3530649],
+      "properties": {
+        "id": "0CC0D0EE8C1B60777DFF",
+        "name": "International Medical Cent,er (IMC) Ntinda",
+        "phonenumber": "0392176520"
+      }
+    },
+    {
+      "coordinates": [32.5739631, 0.3323065],
+      "properties": {
+        "id": "0D35B494691B6078EAB9",
+        "name": "International Medical Cent,re (IMC) Wandegeya",
+        "phonenumber": "0392004305"
+      }
+    },
+    {
+      "coordinates": [32.6147115, 0.365747],
+      "properties": {
+        "id": "045B93148D1B6079AEB0",
+        "name": "Ntinda Hospital LTD"
+     ,
+      "phonenumber": "0702740222"}
+    },
+    {
+      "coordinates": [32.6174919, 0.2728351],
+      "properties": {
+        "id": "09355497FF1B607ACCAD",
+        "name": "St. Joseph’s Medical Centr,e ",
+        "phonenumber": "773496999"
+      }
+    },
+    {
+      "coordinates": [32.5769, 0.3798361999999999],
+      "properties": {
+        "id": "0C22E9D33B1B607B6D75",
+        "name": "Mpererwe stage Medical cen,tre      ",
+        "phonenumber": "0772406642"
+      }
+    },
+    {
+      "coordinates": [32.47927440000001, 0.3987229],
+      "properties": {
+        "id": "01525E77A71B607CB200",
+        "name": "St. Joseph’s Medical Centr,e Wakiso",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [32.901896, 0.7037219],
+      "properties": {
+        "id": "0DBE6A10A61B607D88E1",
+        "name": "Bakule D Clinic "
+      }
+,
+    "phonenumber": "0782559984"},
+    {
+      "coordinates": [32.4914998, 0.8411669],
+      "properties": {
+        "id": "0E6DEAF0901B607E828C",
+        "name": "Medical Plaza Luwero"
+    ,
+      "phonenumber": "0772333402"}
+    },
+    {
+      "coordinates": [32.1391217, 1.9530448],
+      "properties": {
+        "id": "07D21ECEDD1B607F1D9F",
+        "name": "Lunar Medical Centre Bweya,le",
+        "phonenumber": "0772506522"
+      }
+    },
+    {
+      "coordinates": [32.063964, 1.877655],
+      "properties": {
+        "id": "0BDE7B9C481B607FBCF6",
+        "name": "Kiryadongo Hospital (Priva,te wing)",
+        "phonenumber": "0773280350"
+      }
+    },
+    {
+      "coordinates": [32.1391217, 1.9530448],
+      "properties": {
+        "id": "021DF452DA1B60804DD6",
+        "name": "Doctor’s Medical Centre Ki,ryandongo",
+        "phonenumber": "0782506093"
+      }
+    },
+    {
+      "coordinates": [32.0140304, 1.7920399],
+      "properties": {
+        "id": "0FB71943A01B60812687",
+        "name": "Kigumba Medical Centre "
+ ,
+      "phonenumber": "0772850014"}
+    },
+    {
+      "coordinates": [32.8941473, 2.2428775],
+      "properties": {
+        "id": "0F2559F7E61B6081C153",
+        "name": "Marie Stopes Lira Center"
+,
+      "phonenumber": "0759004035"}
+    },
+    {
+      "coordinates": [32.8874067, 2.2580829],
+      "properties": {
+        "id": "0026AA46CA1B6082E877",
+        "name": "Al-Shafa Modern Hospital L,ira",
+        "phonenumber": "0712480439"
+      }
+    },
+    {
+      "coordinates": [33.70706190000001, 2.7785446],
+      "properties": {
+        "id": "04B07F7B9B1B6083820E",
+        "name": "Abim Medicare Clinic "
+   ,
+      "phonenumber": "0772903128"}
+    },
+    {
+      "coordinates": [34.1114621, 3.0062022],
+      "properties": {
+        "id": "05B21577411B6084B669",
+        "name": "Calvary Health Care Kotido,",
+        "phonenumber": "0773971954"
+      }
+    },
+    {
+      "coordinates": [33.9750018, 3.5126215],
+      "properties": {
+        "id": "060D9676661B6085970D",
+        "name": "St. Daniel Life Care  Kaab,ong",
+        "phonenumber": "0782124316"
+      }
+    },
+    {
+      "coordinates": [32.2732508, 2.7864564],
+      "properties": {
+        "id": "09967DD0D81B60865117",
+        "name": "Marie Stopes Gulu"
+      },
+      "phonenumber": "0759004044"
+    },
+    {
+      "coordinates": [30.9579585, 3.4116772],
+      "properties": {
+        "id": "022F3793C71B60872B4F",
+        "name": "Rhema Medical Center - Kob,oko",
+        "phonenumber": "0786927315"
+      }
+    },
+    {
+      "coordinates": [31.2450517, 3.4670474],
+      "properties": {
+        "id": "05B58D81AB1B6087D483",
+        "name": "Rhema Hospital Yumbe"
+    ,
+      "phonenumber": "0773920086"}
+    },
+    {
+      "coordinates": [33.4973838, 0.6242747],
+      "properties": {
+        "id": "073C1AF9541B6088C763",
+        "name": "Musana Community Health Ce,ntre",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [34.0919803, 0.4706692],
+      "properties": {
+        "id": "0A3BDD77F21B608A7F47",
+        "name": "Marie Stopes Busia"
+      ,
+      "phonenumber": "0759004910"}
+    },
+    {
+      "coordinates": [33.6077785, 1.7121746],
+      "properties": {
+        "id": "016B7B18031B608B6BD5",
+        "name": "Marie Stopes Soroti Center,",
+        "phonenumber": "0759004910"
+      }
+    },
+    {
+      "coordinates": [32.5822546, 0.3149151],
+      "properties": {
+        "id": "0DC34B07391B608E1A3E",
+        "name": "Kays Dental Colline House",
+        "phonenumber": ""
+      }
+    },
+    {
+      "coordinates": [32.6051185, 0.3281216],
+      "properties": {
+        "id": "00806B71B71B608F0C79",
+        "name": "Med-Optics Vision Centre -, Forest Mall",
+        "phonenumber": "0755502002"
+      }
+    },
+    {
+      "coordinates": [32.577874, 0.315075],
+      "properties": {
+        "id": "000CA571D41B608F753B",
+        "name": "Med-Optics Vision Centre -, Kampala Road",
+        "phonenumber": "0755502002"
+      }
+    },
+    {
+      "coordinates": [32.5829119, 0.3129899],
+      "properties": {
+        "id": "0CFE9923BB1B6090027E",
+        "name": "City Optics",
+        "phonenumber":"0772501255"
+      }
+    },
+
+    {
+      "coordinates": [32.5774224, 0.3146162000000001],
+      "properties": {
+        "id": "00F83156ED1B6090B209",
+        "name": "City Optics and Contact Le,ns Burton Street",
+        "phonenumber": "0772501255"
+      }
+    },
+    {
+      "coordinates": [32.5776575, 0.3143944],
+      "properties": {
+        "id": "0AD43877CA1B609156C4",
+        "name": "City Optics Johnstone Stre,et",
+        "phonenumber": "0772501255"
+      }
+    },
+    {
+      "coordinates": [32.612992, 0.3561413],
+      "properties": {
+        "id": "0512738C121B6091C068",
+        "name": "Ecopharm Pharmacy"
+      },
+      "phonenumber": "0701080340"
+    },
+    {
+      "coordinates": [32.612992, 0.3561413],
+      "properties": {
+        "id": "04F88932051B60921D8C",
+        "name": "Ecopharm Pharmacy  Ntinda",
+        "phonenumber": "0701080340"
+      }
+    },
+    {
+      "coordinates": [32.6162944, 0.3493731],
+      "properties": {
+        "id": "0E07B8430E1B60927D9C",
+        "name": "Ecopharm Pharmacy - Capita,l Shoppers City",
+        "phonenumber": "0701080340"
+      }
+    },
+    {
+      "coordinates": [32.5792553, 0.3127995],
+      "properties": {
+        "id": "014CD0AEDF1B6092FB64",
+        "name": "Ecopharm Pharmacy Luwum St,reet",
+        "phonenumber": "0701080340"
+      }
+    },
+    {
+      "coordinates": [32.6257655, 0.309722],
+      "properties": {
+        "id": "017DFF530D1B6094F6D1",
+        "name": "Ecopharm Bugoloobi"
+      ,
+      "phonenumber": "0701080340"}
+    }
+  ]
+}
