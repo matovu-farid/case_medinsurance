@@ -1,6 +1,7 @@
 import 'package:case_app/screens/application_form.dart';
 import 'package:case_app/screens/products_and_services.dart';
-import 'package:case_app/widgets/faridFormField.dart';
+import 'package:case_app/widgets/farid_phone_field.dart';
+import 'package:case_app/widgets/farid_textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,36 +13,34 @@ class FeedbackInquiries extends StatefulWidget {
 class _FeedbackInquiriesState extends State<FeedbackInquiries> {
   final formInfo = [];
 
-  addToFormInfo(Map<String, FaridFormField> formMap) {
+  addToFormInfo(Map<String, Widget> formMap) {
     formInfo.addAll(formMap.values);
   }
 
-  final Map<String, FaridFormField> formMap = {
-    'Company': FaridFormField(
-      text: 'Company',
-        description: 'required'
+  final Map<String, Widget> formMap = {
+    'Company': FaridTextField(
+      label: 'Company',
     ),
 
-
-    'Phone No': FaridFormField(
-      text: 'Phone No:',
-        description: 'Phone number'
+//TODO: implement onSaved
+    'Phone No': FaridPhoneField(
+      
     ),
-    'Address': FaridFormField(
-      text: 'Address',
-        description: 'required'
+    'Address': FaridTextField(
+      label: 'Address',
     ),
-    'Most visited provider': FaridFormField(
-      text: 'Most visited provider',
-        description: 'required'
+    'Most visited provider': FaridTextField(
+      label: 'Most visited provider',
+       
     ),
-    'Other provider visited': FaridFormField(
-      text: 'Other provider visited',
+    'Other provider visited': FaridTextField(
+      label: 'Other provider visited',
+      type: FieldType.optional,
     )
   };
-  TextEditingController _complaintController;
-  TextEditingController _complimentsController;
-  TextEditingController _inquiryController;
+  TextEditingController? _complaintController;
+  TextEditingController? _complimentsController;
+  TextEditingController? _inquiryController;
 
 
   @override
@@ -56,17 +55,18 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
 
   @override
   void dispose() {
-    _complimentsController.dispose();
-    _complaintController.dispose();
-    _inquiryController.dispose();
+    _complimentsController!.dispose();
+    _complaintController!.dispose();
+    _inquiryController!.dispose();
 
     super.dispose();
   }
-  int groupValue=0;
-  FaridFormField cardField= FaridFormField(
-  text: 'Card number:',
-      description: 'required'
+  int? groupValue=0;
+  var cardField= FaridTextField(
+  label: 'Card number:',
+      
   );
+
 
 
   @override
@@ -102,8 +102,8 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
            Row(
              children: [
                Flexible(child: Text('Are you a member?')),
-               Flexible(child: RadioListTile(value:0, groupValue: groupValue, onChanged: (value)=>setState((){groupValue=value;}),title: Text('Yes'),)),
-               Flexible(child: RadioListTile(value: 1, groupValue: groupValue, onChanged: (value)=>setState(()=>groupValue=value),title: Text('No'),)),
+               Flexible(child: RadioListTile(value:0, groupValue: groupValue, onChanged: (dynamic value)=>setState((){groupValue=value;}),title: Text('Yes'),)),
+               Flexible(child: RadioListTile(value: 1, groupValue: groupValue, onChanged: (dynamic value)=>setState(()=>groupValue=value),title: Text('No'),)),
              ],
            ),
            if(groupValue==0)
@@ -156,9 +156,9 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
               });
               //print('Card Number : ${_cardNumber.text}');
               printInfo(cardField);
-              print('Complaint : ${_complaintController.text}');
-              print('Compliments : ${_complimentsController.text}');
-              print('Inquiry : ${_inquiryController.text}');
+              print('Complaint : ${_complaintController!.text}');
+              print('Compliments : ${_complimentsController!.text}');
+              print('Inquiry : ${_inquiryController!.text}');
 
             },
             color: Colors.green,

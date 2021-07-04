@@ -1,6 +1,6 @@
-import 'package:case_app/screens/choice_form.dart';
+import 'dart:async';
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:splashscreen/splashscreen.dart';
 
 class StartingScreen extends StatefulWidget {
   @override
@@ -10,17 +10,29 @@ class StartingScreen extends StatefulWidget {
 class _StartingScreenState extends State<StartingScreen> {
   @override
   Widget build(BuildContext context) {
-    return
-       
-       SplashScreen(
-         loadingText: Text("Welcome to Case Medcare"),
-          image: Image(image: AssetImage('assets/images/icon.png')),
-          photoSize: 200,
-        seconds: 10,
-        imageBackground: AssetImage('assets/images/background.jpg'),
-        
-        //routeName: '/Choice',
-        navigateAfterSeconds: ChoiceForm(),
-       ) ;
+    return Scaffold(body: MySplashScreen());
+  }
+}
+
+class MySplashScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Timer(Duration(seconds: 7),()=>Navigator.of(context).pushNamed("/Choice"));
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        Image(
+            fit: BoxFit.cover,
+            image: AssetImage('assets/images/background.jpg')),
+        Positioned.fill(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+            child: Image(
+              image: AssetImage('assets/images/icon.png'),
+            ),
+          ),
+        )
+      ],
+    );
   }
 }

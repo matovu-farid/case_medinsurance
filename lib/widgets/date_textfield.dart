@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
-class DateTextField extends StatefulWidget {
-  final String text;
-  String hint;
-  double height;
-  DateTextField({Key key, this.text, this.hint,this.height}) : super(key: key);
+class FaridDateField extends StatefulWidget {
+  /// stores the date statically
+  final DateKeeper dateKeeper;
+  final String? text;
+  String? hint;
+  double? height;
+  void Function(String?)? onSaved;
+  FaridDateField(
+      {Key? key,
+      this.text,
+      this.hint,
+      this.height,
+      this.onSaved,
+      required this.dateKeeper})
+      : super(key: key);
 
   @override
-  _DateTextFieldState createState() => _DateTextFieldState();
+  _FaridDateFieldState createState() => _FaridDateFieldState();
 }
 
-class _DateTextFieldState extends State<DateTextField> {
+class _FaridDateFieldState extends State<FaridDateField> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,7 +34,8 @@ class _DateTextFieldState extends State<DateTextField> {
           child: Container(
             height: widget.height ?? 60,
             child: TextFormField(
-              
+              onSaved: widget.onSaved,
+
               expands: true,
               minLines: null,
               maxLines: null,
@@ -54,6 +65,8 @@ class _DateTextFieldState extends State<DateTextField> {
                     onChanged: (date) {
                   setState(() {
                     widget.hint = '${date.day}/${date.month}/${date.year}';
+                    widget.dateKeeper
+                        .setDate('${date.day}/${date.month}/${date.year}');
                   });
                 },
 //
@@ -65,5 +78,12 @@ class _DateTextFieldState extends State<DateTextField> {
         ),
       ],
     );
+  }
+}
+
+class DateKeeper {
+   String date = '';
+  setDate(String dateGot) {
+    date = dateGot;
   }
 }

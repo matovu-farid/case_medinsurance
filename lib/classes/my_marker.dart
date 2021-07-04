@@ -1,14 +1,14 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MyMarker extends Marker {
-  MyMarker({MarkerId markerId, LatLng position, InfoWindow infoWindow})
+  MyMarker({required MarkerId markerId, required LatLng position, required InfoWindow infoWindow})
       : super(markerId: markerId, position: position, infoWindow: infoWindow) {
     title = infoWindow.title;
     snippet = infoWindow.snippet;
   }
 
-  String title;
-  String snippet;
+  String? title;
+  String? snippet;
 
   factory MyMarker.fromMarker(Marker marker) {
     dynamic mymarker = marker;

@@ -1,11 +1,9 @@
-import 'dart:async';
 
-import 'package:rxdart/rxdart.dart';
 
 class Location {
-    List<Feature> features;
+    List<Feature>? features;
 
-    Location({this.features});
+    Location({ this.features});
 
     factory Location.fromJson(Map<String, dynamic> json) {
         return Location(
@@ -17,15 +15,15 @@ class Location {
     Map<String, dynamic> toJson() {
         final Map<String, dynamic> data = new Map<String, dynamic>();
         if (this.features != null) {
-            data['features'] = this.features.map((v) => v.toJson()).toList();
+            data['features'] = this.features!.map((v) => v.toJson()).toList();
         }
         return data;
     }
 }
 
 class Feature {
-    List<double> coordinates;
-    Properties properties;
+    List<double>? coordinates;
+    Properties? properties;
 
     Feature({this.coordinates, this.properties});
 
@@ -42,15 +40,15 @@ class Feature {
             data['coordinates'] = this.coordinates;
         }
         if (this.properties != null) {
-            data['properties'] = this.properties.toJson();
+            data['properties'] = this.properties!.toJson();
         }
         return data;
     }
 }
 
 class Properties {
-    String id;
-    String name;
+    String? id;
+    String? name;
 
     Properties({this.id, this.name});
 

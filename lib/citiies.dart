@@ -1,5 +1,5 @@
 class City {
-    List<CityX> cities;
+    List<CityX>? cities;
 
     City({this.cities});
 
@@ -12,15 +12,15 @@ class City {
     Map<String, dynamic> toJson() {
         final Map<String, dynamic> data = new Map<String, dynamic>();
         if (this.cities != null) {
-            data['cities'] = this.cities.map((v) => v.toJson()).toList();
+            data['cities'] = this.cities!.map((v) => v.toJson()).toList();
         }
         return data;
     }
 }
 
 class CityX {
-    List<double> coordinates;
-    String name;
+    List<double>? coordinates;
+    String? name;
 
     CityX({this.coordinates, this.name});
 

@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:case_app/bloc/network_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebasefunctions/firebasefunctions.dart';
 import 'package:flutter/services.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
 import 'package:geolocator/geolocator.dart';
@@ -15,14 +14,14 @@ import 'converter.dart';
 import 'my_marker.dart';
 
 class CityProviders extends NetworkBloc {
-  NearHospitalNetworkBloc hospitalBloc;
+  late NearHospitalNetworkBloc hospitalBloc;
   CityProviders() {
     hospitalBloc = NearHospitalNetworkBloc();
-    ref = firestore.collection('cities');
+    ref = FirebaseFirestore.instance.collection('cities');
   }
   var nearbyHospitals = BehaviorSubject<Set<MyMarker>>();
 
-  Position get currentCity => hospitalBloc.centerPosition;
+  Position? get currentCity => hospitalBloc.centerPosition;
 
   void setcurrentCity(Position city) {
     hospitalBloc.centerPosition = city;
@@ -42,20 +41,20 @@ class CityProviders extends NetworkBloc {
   Stream<Set<MyMarker>> get nearbyHospitalsStream => nearbyHospitals.stream;
 
   @override
-  Set<Marker> docToMarker(List<DocumentSnapshot> documents) {
+  Set<Marker> docToMarker(List<DocumentSnapshot<Map<String,dynamic>>> documents) {
     return documents.map((doc) {
-      GeoPoint point = doc.data()['position']['geopoint'];
+      GeoPoint point = doc.data()!['position']['geopoint'];
 
       return Marker(
           markerId: MarkerId(doc.id),
           position: LatLng(point.latitude, point.longitude),
-          infoWindow: InfoWindow(title: doc.data()['name']));
+          infoWindow: InfoWindow(title: doc.data()!['name']));
     }).toSet();
   }
 
   @override
   Stream<Set<Marker>> getMarkers() {
-    var ref = firestore.collection('cities');
+    var ref = FirebaseFirestore.instance.collection('cities');
     return geo.collection(collectionRef: ref).snapshot().map((querySnapshot) {
       var docs = querySnapshot.docs;
       return docToMarker(docs);
@@ -70,27 +69,27 @@ class CityProviders extends NetworkBloc {
     var json = jsonDecode(jsonString);
     _logger.info(json);
 
-    var cities = City.fromJson(json).cities;
+    var cities = City.fromJson(json).cities!;
 
     return cities.forEach((city) {
       var point = geo.point(
-          latitude: city.coordinates[1], longitude: city.coordinates[0]);
+          latitude: city.coordinates![1], longitude: city.coordinates![0]);
       ref.add({'position': point.data, 'name': city.name});
     });
   }
 }
 
 class NearHospitalNetworkBloc {
-  Position centerPosition;
+  Position? centerPosition;
   NearHospitalNetworkBloc();
 
-  var ref = firestore.collection('health_providers');
+  var ref = FirebaseFirestore.instance.collection('health_providers');
 
   static final _logger = Logger('NearHospital Network');
   final geo = Geoflutterfire();
 
   GeoFirePoint get center => geo.point(
-      latitude: centerPosition.latitude, longitude: centerPosition.longitude);
+      latitude: centerPosition!.latitude, longitude: centerPosition!.longitude);
 
   Stream<Set<MyMarker>> getMarkers() {
     return geo
@@ -99,16 +98,16 @@ class NearHospitalNetworkBloc {
         .map(docToMarker);
   }
 
-  Set<MyMarker> docToMarker(List<DocumentSnapshot> documents) {
+  Set<MyMarker> docToMarker(List<DocumentSnapshot<Map<String,dynamic>>> documents) {
     var markers = documents.map((doc) {
-      GeoPoint point = doc.data()['position']['geopoint'];
+      GeoPoint point = doc.data()!['position']['geopoint'];
       var distance = center.distance(lat: point.latitude, lng: point.longitude);
 
       return MyMarker(
           markerId: MarkerId(doc.id),
           position: LatLng(point.latitude, point.longitude),
           infoWindow: InfoWindow(
-              title: doc.data()['name'], snippet: '$distance km from you'));
+              title: doc.data()!['name'], snippet: '$distance km from you'));
     }).toSet();
     _logger.info(markers);
     return markers;

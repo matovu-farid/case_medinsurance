@@ -10,7 +10,15 @@ abstract class Converter<T, R> {
 class ToPosition extends Converter<LatLng, Position> {
   ToPosition(LatLng latLng) : super(latLng);
   Position convert() {
-    return Position(latitude: t.latitude, longitude: t.longitude);
+    return Position(
+        latitude: t.latitude,
+        longitude: t.longitude,
+        timestamp: DateTime.now(),
+        speed: 90,
+        altitude: 90,
+        speedAccuracy: 90,
+        heading: 90,
+        accuracy: 90);
   }
 }
 
@@ -23,23 +31,24 @@ class ToLatLng extends Converter<Position, LatLng> {
   }
 }
 
-class ToInfo extends Converter<Marker, Map<String, String>> {
+class ToInfo extends Converter<Marker, Map<String?, String?>> {
   ToInfo(Marker t) : super(t);
 
   @override
-  Map<String, String> convert() {
+  Map<String?, String?> convert() {
     return {t.infoWindow.title: t.infoWindow.snippet};
   }
 }
 
-class ToInfoMap extends Converter<Iterable<Marker>, Map<String, String>> {
-  ToInfoMap(Iterable<Marker> t) : super(t);
+class ToInfoMap extends Converter<Iterable<Marker>?, Map<String?, String?>> {
+  ToInfoMap(Iterable<Marker>? t) : super(t);
 
   @override
-  Map<String, String> convert() {
-    var map = <String, String>{};
+  Map<String?, String?> convert() {
+    var map = <String?, String?>{};
+    if (t == null) return {};
 
-    for (var marker in t) {
+    for (var marker in t!) {
       var mapGot = ToInfo(marker).convert();
       if (!map.containsKey(mapGot.keys.first))
         map[mapGot.keys.first] = mapGot.values.first;

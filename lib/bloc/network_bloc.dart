@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebasefunctions/firebasefunctions.dart';
+// import 'package:firebasefunctions/firebasefunctions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geoflutterfire/geoflutterfire.dart';
@@ -11,17 +11,17 @@ import 'package:logging/logging.dart';
 import 'package:rxdart/rxdart.dart';
 import '../location.dart';
 
-abstract class NetworkBloc with FirebaseBloc {
+abstract class NetworkBloc  {
   final geo = Geoflutterfire();
 
-  CollectionReference ref;
+  late CollectionReference ref;
 
   setMarkers();
 
   Stream<Set<Marker>> getMarkers();
 
   @protected
-  Set<Marker> docToMarker(List<DocumentSnapshot> documents);
+  Set<Marker> docToMarker(List<DocumentSnapshot<Map<String,dynamic>>> documents);
 }
 
 class Locator {
@@ -63,31 +63,31 @@ class RadiusHandler {
 }
 
 class ProviderNetworkBloc extends NetworkBloc {
-  RadiusHandler radiusHandler;
-  final Position centerPosition;
+  late RadiusHandler radiusHandler;
+  final Position? centerPosition;
   ProviderNetworkBloc(this.centerPosition) {
     radiusHandler = RadiusHandler();
 
-    ref = firestore.collection('health_providers');
+    ref = FirebaseFirestore.instance.collection('health_providers');
   }
 
   static final _logger = Logger('Provider Network');
 
   GeoFirePoint get center => geo.point(
-      latitude: centerPosition.latitude, longitude: centerPosition.longitude);
+      latitude: centerPosition!.latitude, longitude: centerPosition!.longitude);
 
   Future<void> setMarkers() async {
     var jsonString = await rootBundle.loadString('assets/json/case_app.json');
     var json = jsonDecode(jsonString);
     _logger.info(json);
 
-    var locations = Location.fromJson(json).features;
+    var locations = Location.fromJson(json).features!;
 
     return locations.forEach((location) {
       var point = geo.point(
-          latitude: location.coordinates[1],
-          longitude: location.coordinates[0]);
-      ref.add({'position': point.data, 'name': location.properties.name});
+          latitude: location.coordinates![1],
+          longitude: location.coordinates![0]);
+      ref.add({'position': point.data, 'name': location.properties!.name});
     });
   }
 
@@ -98,16 +98,17 @@ class ProviderNetworkBloc extends NetworkBloc {
         .map(docToMarker);
   }
 
-  Set<Marker> docToMarker(List<DocumentSnapshot> documents) {
+  Set<Marker> docToMarker(List<DocumentSnapshot<Map<String,dynamic>>> documents) {
     return documents.map((doc) {
-      GeoPoint point = doc.data()['position']['geopoint'];
+      
+      GeoPoint point = doc.data()!['position']['geopoint'];
       var distance = center.distance(lat: point.latitude, lng: point.longitude);
 
       return Marker(
           markerId: MarkerId(doc.id),
           position: LatLng(point.latitude, point.longitude),
           infoWindow: InfoWindow(
-              title: doc.data()['name'], snippet: '$distance km from you'));
+              title: doc.data()!['name'], snippet: '$distance km from you'));
     }).toSet();
   }
 }

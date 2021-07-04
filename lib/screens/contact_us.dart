@@ -1,9 +1,9 @@
 import 'package:case_app/classes/models/contacts.dart';
+import 'package:case_app/widgets/my_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:logging/logging.dart';
-import 'package:shared_widgets/shared_widgets.dart';
 
 class ContactUs extends StatelessWidget {
   final _logger = Logger('Contact Us');
@@ -17,7 +17,7 @@ class ContactUs extends StatelessWidget {
           builder: (_, snapshot) {
             _logger.info(snapshot.connectionState);
             if (snapshot.connectionState == ConnectionState.done) {
-              var map = snapshot.data.toJson();
+              var map = snapshot.data!.toJson();
               return ListView.builder(
                   itemCount: map.length,
                   itemBuilder: (_, index) {

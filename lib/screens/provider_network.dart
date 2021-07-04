@@ -1,16 +1,16 @@
 import 'package:case_app/classes/cityProvider.dart';
 import 'package:case_app/classes/converter.dart';
 import 'package:case_app/classes/my_marker.dart';
+import 'package:case_app/widgets/my_indicator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:loading_indicator/loading_indicator.dart';
-import 'package:shared_widgets/shared_widgets.dart';
 
 class ProviderNetwork extends StatefulWidget {
-  ProviderNetwork({Key key}) : super(key: key);
+  ProviderNetwork({Key? key}) : super(key: key);
 
   @override
   _ProviderNetworkState createState() => _ProviderNetworkState();
@@ -32,7 +32,7 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
             stream: cityProviders.getMarkers(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                var markers = snapshot.data;
+                var markers = snapshot.data!;
                 cityProviders.addToCities(markers);
                 cityProviders.setcurrentCity(
                     ToPosition(markers.first.position).convert());
@@ -46,7 +46,9 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
                           // value: cityProviders.currentCity,
 
                           onChanged: (val) {
+                            if(val!=null)
                             cityProviders.setcurrentCity(
+                              
                                 ToPosition(val.position).convert());
                           },
                           markers: markers.toList(), label: 'Search City',
@@ -97,9 +99,9 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
 class CitySearch extends StatelessWidget {
   final List<Marker> markers;
   final String label;
-  final void Function(Marker) onChanged;
+  final void Function(Marker?)? onChanged;
   const CitySearch(
-      {Key key, @required this.markers, @required this.label, this.onChanged})
+      {Key? key, required this.markers, required this.label, this.onChanged})
       : super(key: key);
 
   @override
@@ -113,7 +115,7 @@ class CitySearch extends StatelessWidget {
       mode: Mode.MENU,
       items: markers,
       label: label,
-      itemAsString: (marker) => marker.infoWindow.title,
+      itemAsString: (marker) => marker.infoWindow.title!,
     );
   }
 }

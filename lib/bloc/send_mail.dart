@@ -1,13 +1,18 @@
-import 'package:firebasefunctions/firebasefunctions.dart';
+// import 'package:firebasefunctions/firebasefunctions.dart';
 
-class Mail with FirebaseBloc {
-  final String subject;
-  final String text;
+import 'package:cloud_functions/cloud_functions.dart';
+import 'package:logging/logging.dart';
 
-  Mail({this.subject = 'Case Medcare', this.text = '  This is a test'});
-  send() async{
-    
-    var sendMail = firebaseFunctions.httpsCallable('sendMail');
-    sendMail({'subject': subject, 'text': text});
+class Mail {
+  final Map<String, dynamic> data;
+  final String methodName;
+
+  static final _logger = Logger('Mail');
+
+  Mail(this.data,this.methodName);
+  Future send() async {
+    var sendMail = FirebaseFunctions.instance.httpsCallable(methodName);
+
+    await sendMail(data);
   }
 }

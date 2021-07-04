@@ -17,5 +17,5 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 =======
 # Case_app
-An apppplication for case clinic
+An application for case medcare
 >>>>>>> 9efaedd637a83377e7fc71846499d38882816941

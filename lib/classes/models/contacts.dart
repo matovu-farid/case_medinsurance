@@ -4,14 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:logging/logging.dart';
 
 class Contacts {
-  String customerCare;
-  String clinicNetwork;
-  String claims;
-  String membershipCards;
-  String generalLine;
-  String tollFree;
-  String email;
-  String website;
+  String? customerCare;
+  String? clinicNetwork;
+  String? claims;
+  String? membershipCards;
+  String? generalLine;
+  String? tollFree;
+  String? email;
+  String? website;
 
   Contacts({
     this.customerCare,
@@ -64,14 +64,14 @@ class Contacts {
       };
 
   Contacts copyWith({
-    String customerCare,
-    String clinicNetwork,
-    String claims,
-    String membershipCards,
-    String generalLine,
-    String tollFree,
-    String email,
-    String website,
+    String? customerCare,
+    String? clinicNetwork,
+    String? claims,
+    String? membershipCards,
+    String? generalLine,
+    String? tollFree,
+    String? email,
+    String? website,
   }) {
     return Contacts(
       customerCare: customerCare ?? this.customerCare,
