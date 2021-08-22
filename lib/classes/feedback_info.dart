@@ -1,4 +1,9 @@
- class FeedbackInfo {
+
+import 'package:json_annotation/json_annotation.dart';
+import 'package:json_serializable/builder.dart';
+
+@JsonSerializable(explicitToJson: true)
+class FeedbackInfo {
   String? company;
   String? phoneNumber;
   String? address;
@@ -43,21 +48,13 @@
 
   FeedbackInfo();
 
-  @override
-  submit() {
-    // TODO: implement submit
-    throw UnimplementedError();
-  }
+  
 }
-
+@JsonSerializable(explicitToJson: true)
 class MemberFeedback extends FeedbackInfo {
   String? cardNumber;
  String? get getCardNumber => this.cardNumber;
 
  set setCardNumber(String? cardNumber) => this.cardNumber = cardNumber;
-  @override
-  submit() {
-    // TODO: implement submit
-    throw UnimplementedError();
-  }
+
 }

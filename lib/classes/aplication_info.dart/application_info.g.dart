@@ -8,16 +8,16 @@ part of 'application_info.dart';
 
 ApplicationInfo _$ApplicationInfoFromJson(Map<String, dynamic> json) {
   return ApplicationInfo(
-    dependants: (json['dependants'] as List<dynamic>?)
-        ?.map((e) => Dependant.fromJson(e as Map<String, dynamic>))
+    (json['dependants'] as List<dynamic>)
+        .map((e) => Dependant.fromJson(e as Map<String, dynamic>))
         .toList(),
-    clientInfo: ClientData.fromJson(json['clientInfo'] as Map<String, dynamic>),
+    ClientData.fromJson(json['clientInfo'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$ApplicationInfoToJson(ApplicationInfo instance) =>
     <String, dynamic>{
-      'dependants': instance.dependants?.map((e) => e.toJson()).toList(),
+      'dependants': instance.dependants.map((e) => e.toJson()).toList(),
       'clientInfo': instance.clientInfo.toJson(),
     };
 
@@ -46,12 +46,12 @@ Map<String, dynamic> _$ClientDataToJson(ClientData instance) =>
 Dependant _$DependantFromJson(Map<String, dynamic> json) {
   return Dependant()
     ..name = json['name'] as String?
-    ..Gender = json['Gender'] as String?
+    ..gender = json['gender'] as String?
     ..dateOfBirth = json['dateOfBirth'] as String?;
 }
 
 Map<String, dynamic> _$DependantToJson(Dependant instance) => <String, dynamic>{
       'name': instance.name,
-      'Gender': instance.Gender,
+      'gender': instance.gender,
       'dateOfBirth': instance.dateOfBirth,
     };

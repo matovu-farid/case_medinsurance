@@ -3,19 +3,18 @@ import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class FaridDateField extends StatefulWidget {
   /// stores the date statically
-  final DateKeeper dateKeeper;
+  final DateKeeper dateKeeper = DateKeeper();
   final String? text;
   String? hint;
   double? height;
   void Function(String?)? onSaved;
-  FaridDateField(
-      {Key? key,
-      this.text,
-      this.hint,
-      this.height,
-      this.onSaved,
-      required this.dateKeeper})
-      : super(key: key);
+  FaridDateField({
+    Key? key,
+    this.text,
+    this.hint,
+    this.height,
+    this.onSaved,
+  }) : super(key: key);
 
   @override
   _FaridDateFieldState createState() => _FaridDateFieldState();
@@ -34,7 +33,11 @@ class _FaridDateFieldState extends State<FaridDateField> {
           child: Container(
             height: widget.height ?? 60,
             child: TextFormField(
-              onSaved: widget.onSaved,
+              onSaved: (_) {
+                var onSaved = widget.onSaved;
+                if(onSaved!=null)
+                onSaved(widget.dateKeeper.date);
+              },
 
               expands: true,
               minLines: null,
@@ -82,7 +85,7 @@ class _FaridDateFieldState extends State<FaridDateField> {
 }
 
 class DateKeeper {
-   String date = '';
+  String date = '';
   setDate(String dateGot) {
     date = dateGot;
   }

@@ -4,13 +4,11 @@ import 'package:case_app/widgets/date_textfield.dart';
 import 'package:case_app/widgets/farid_phone_field.dart';
 import 'package:case_app/widgets/mail.dart';
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:intl_phone_field/phone_number.dart';
+
 
 class ClaimForm extends StatelessWidget {
   final formKey = GlobalKey<FormState>();
   var claim = Claim();
-  var dateKeeper = DateKeeper();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +34,9 @@ class ClaimForm extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: FaridDateField(
                 hint: 'Treatment Date',
-                dateKeeper: dateKeeper,
+                onSaved: (date){
+                  claim.treatmentDate = date;
+                },
               ),
             ),
             Padding(
@@ -79,7 +79,7 @@ class ClaimForm extends StatelessWidget {
                   var formstate = formKey.currentState!;
                   if (formstate.validate()) {
                     formstate.save();
-                    claim.treatmentDate = dateKeeper.date;
+                    
                     var mail = claim.mail();
                     AuthNavigator(context, MailWidget(mail: mail));
                   }

@@ -3,8 +3,17 @@ import 'package:flutter/material.dart';
 class FaridRadioTile extends StatefulWidget {
   final List<String> radioList;
   final String? label;
-  const FaridRadioTile({Key? key, required this.radioList, this.label})
-      : super(key: key);
+  final void Function(String?)? onChanged;
+  final void Function() initCall;
+  FaridRadioTile(
+      {Key? key,
+      required this.radioList,
+      this.label,
+      this.onChanged,
+      required this.initCall})
+      : super(key: key) {
+    initCall();
+  }
 
   @override
   _FaridRadioTileState createState() => _FaridRadioTileState();
@@ -12,12 +21,15 @@ class FaridRadioTile extends StatefulWidget {
 
 class _FaridRadioTileState extends State<FaridRadioTile> {
   var groupValue = 0;
+
   RadioListTile radioTileBulder(String textGot, int value) {
-    final RadioListTile tile = RadioListTile(
+    final RadioListTile tile = RadioListTile<int>(
       title: Text(textGot),
       onChanged: (value) {
+        var onChanged = widget.onChanged;
+        if (onChanged != null) onChanged(widget.radioList[value!]);
         setState(() {
-          groupValue = value;
+          groupValue = value!;
         });
       },
       value: value,
@@ -32,8 +44,8 @@ class _FaridRadioTileState extends State<FaridRadioTile> {
     return Row(
       children: <Widget>[
         if (widget.label != null) Text('${widget.label} : '),
-        for (var i = 0; i < widget.radioList.length;i++)
-        Flexible(child: radioTileBulder(widget.radioList[i], i)),
+        for (var i = 0; i < widget.radioList.length; i++)
+          Flexible(child: radioTileBulder(widget.radioList[i], i)),
       ],
     );
   }

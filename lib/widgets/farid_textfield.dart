@@ -29,7 +29,7 @@ class FaridTextField extends StatelessWidget {
           if (label != null)
             Flexible(
               flex: 3,
-              child: Text('${label} '),
+              child: Text('$label '),
             ),
           Flexible(
             flex: 7,

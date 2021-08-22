@@ -1,14 +1,17 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:json_serializable/builder.dart';
 
 part 'application_info.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class ApplicationInfo {
-  final List<Dependant>? dependants;
-  final ClientData clientInfo;
+  List<Dependant> dependants;
+  ClientData clientInfo;
 
-  ApplicationInfo({this.dependants, required this.clientInfo});
+  
+  ApplicationInfo(
+    this.dependants,
+    this.clientInfo,
+  );
   factory ApplicationInfo.fromJson(Map<String, dynamic> json) =>
       _$ApplicationInfoFromJson(json);
   Map<String, dynamic> toJson() => _$ApplicationInfoToJson(this);
@@ -33,7 +36,7 @@ class ClientData {
 @JsonSerializable(explicitToJson: true)
 class Dependant {
   String? name;
-  String? Gender;
+  String? gender;
   String? dateOfBirth;
   Dependant();
 

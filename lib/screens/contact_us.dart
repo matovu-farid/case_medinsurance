@@ -9,7 +9,6 @@ class ContactUs extends StatelessWidget {
   final _logger = Logger('Contact Us');
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text('Contacts'),),
       body: FutureBuilder<Contacts>(

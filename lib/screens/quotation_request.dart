@@ -1,13 +1,9 @@
 import 'package:case_app/bloc/quotation_index.dart';
 import 'package:case_app/screens/quotation_forms/corporate_form.dart';
 import 'package:case_app/screens/quotation_forms/individual_form.dart';
-import 'package:case_app/widgets/farid_dropdown.dart';
-import 'package:case_app/widgets/farid_phone_field.dart';
-import 'package:case_app/widgets/farid_textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'application_form.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class QuotationRequest extends StatefulWidget {

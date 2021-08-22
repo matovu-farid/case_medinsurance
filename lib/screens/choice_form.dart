@@ -1,8 +1,5 @@
-import 'package:case_app/bloc/send_mail.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:loading_indicator/loading_indicator.dart';
 import 'package:logging/logging.dart';
 
 

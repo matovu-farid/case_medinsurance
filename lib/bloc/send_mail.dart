@@ -1,4 +1,3 @@
-// import 'package:firebasefunctions/firebasefunctions.dart';
 
 import 'package:cloud_functions/cloud_functions.dart';
 import 'package:logging/logging.dart';

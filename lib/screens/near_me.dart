@@ -1,4 +1,3 @@
-import 'dart:async';
 
 import 'package:case_app/bloc/network_bloc.dart';
 import 'package:case_app/widgets/my_indicator.dart';

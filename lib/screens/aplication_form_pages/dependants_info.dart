@@ -1,3 +1,5 @@
+import 'package:case_app/classes/aplication_info.dart/application_saver.dart';
+import 'package:case_app/classes/aplication_info.dart/application_uploader.dart';
 import 'package:case_app/widgets/date_textfield.dart';
 import 'package:case_app/widgets/farid_dropdown.dart';
 import 'package:case_app/widgets/farid_textfield.dart';
@@ -13,17 +15,37 @@ class DependantDetails extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  var row = {
-    'Name': FaridTextField(fieldHeight: 45, type: FieldType.optional),
-    'Gender': FaridDropDown(
-      dropdownNames: ['Male', 'Female'],
-    ),
-    //TODO: handle date keeper
-    'Date of Birth': FaridDateField(
-      height: 45,
-      dateKeeper: DateKeeper(),
-    ),
-  };
+  var store = DependantsStore.instance;
+
+  Map<String, Widget> get row {
+    var saver = DependantSaver();
+    return {
+      'Name': FaridTextField(
+        fieldHeight: 45,
+        type: FieldType.optional,
+        onSaved: (name) {
+          if (name != null) saver.name(name);
+          saver.save(store);
+        },
+      ),
+      'Gender': FaridDropDown(
+        dropdownNames: ['Male', 'Female'],
+        onSaved: (gender) {
+          if (gender != null) saver.gender(gender);
+          saver.save(store);
+        },
+      ),
+      //TODO: handle date keeper
+      'Date of Birth': FaridDateField(
+        height: 45,
+        onSaved: (date) {
+          if (date != null) saver.dateOfBirth(date);
+          saver.save(store);
+        },
+      ),
+    };
+  }
+
   List<Map<String, Widget>> get tableTextFields => [row, row, row, row, row];
 
   @override
@@ -75,9 +97,12 @@ class DependantDetails extends StatelessWidget {
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
                         formKey.currentState?.save();
+
+                        ApplicationSender().send();
                       } else {
-                        controller.previousPage(duration: Duration(milliseconds: 100),
-                         curve: Curves.easeOutQuad);
+                        controller.previousPage(
+                            duration: Duration(milliseconds: 100),
+                            curve: Curves.easeOutQuad);
                       }
                     },
                     child: Text('Submit')),
