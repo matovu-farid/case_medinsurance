@@ -9,7 +9,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:logging/logging.dart';
 import 'package:rxdart/rxdart.dart';
 
-import '../citiies.dart';
+import '../../citiies.dart';
 import 'converter.dart';
 import 'my_marker.dart';
 

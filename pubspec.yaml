@@ -21,27 +21,32 @@ environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
+  bloc_test: ^8.1.0
+  dartz: ^0.10.0
   dropdown_search: ^0.6.3
+  equatable: ^2.0.3
   firebase_auth: null
   firebase_core: ^1.3.0
   firebase_helpers:
     path: ../shared/firebase_helpers
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.0.1
+  flutter_bloc: null
   flutter_datetime_picker: ^1.5.1
   flutter_launcher_icons: ^0.9.0
   font_awesome_flutter: ^9.1.0
   form_field_validator: ^1.1.0
   geoflutterfire: ^3.0.0-nullsafety.4
   geolocator: ^7.2.0+1
+  get_it: ^7.2.0
   google_maps_flutter: ^2.0.6
   image_picker: ^0.8.1+3
   intl_phone_field: ^2.0.1
-  json_serializable: 
+  json_serializable: null
   keyboard_dismisser: ^2.0.0
   loading_indicator: ^2.1.1
   logging: ^1.0.1
+  mockito: ^5.0.14
   page_view_dot_indicator: ^1.0.0
   rxdart: ^0.27.1
   uuid: ^3.0.4

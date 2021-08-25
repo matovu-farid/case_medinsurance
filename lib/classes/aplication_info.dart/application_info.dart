@@ -1,13 +1,13 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'application_info.g.dart';
 
 @JsonSerializable(explicitToJson: true)
-class ApplicationInfo {
-  List<Dependant> dependants;
+class ApplicationInfo extends Equatable {
+  List<DependantInfo> dependants;
   ClientData clientInfo;
 
-  
   ApplicationInfo(
     this.dependants,
     this.clientInfo,
@@ -15,13 +15,16 @@ class ApplicationInfo {
   factory ApplicationInfo.fromJson(Map<String, dynamic> json) =>
       _$ApplicationInfoFromJson(json);
   Map<String, dynamic> toJson() => _$ApplicationInfoToJson(this);
+
+  @override
+  List<Object?> get props => [dependants, clientInfo];
 }
 
 @JsonSerializable(explicitToJson: true)
-class ClientData {
+class ClientData extends Equatable {
   String? company;
   String? name;
-  String? phonenumber;
+  String? phoneNumber;
   String? dateOfBirth;
   String? gender;
   String? email;
@@ -31,16 +34,37 @@ class ClientData {
   factory ClientData.fromJson(Map<String, dynamic> json) =>
       _$ClientDataFromJson(json);
   Map<String, dynamic> toJson() => _$ClientDataToJson(this);
+
+  @override
+  List<Object?> get props => [
+        name,
+        company,
+        phoneNumber,
+        dateOfBirth,
+        gender,
+        email,
+        address,
+      ];
 }
 
 @JsonSerializable(explicitToJson: true)
-class Dependant {
+class DependantInfo extends Equatable {
   String? name;
   String? gender;
   String? dateOfBirth;
-  Dependant();
+  DependantInfo();
 
-  factory Dependant.fromJson(Map<String, dynamic> json) =>
-      _$DependantFromJson(json);
-  Map<String, dynamic> toJson() => _$DependantToJson(this);
+  bool get isFilled => 
+  name != null && name!.isNotEmpty&&
+  gender != null && gender!.isNotEmpty&&
+  dateOfBirth != null &&
+      dateOfBirth!.isNotEmpty
+  ;
+
+  factory DependantInfo.fromJson(Map<String, dynamic> json) =>
+      _$DependantInfoFromJson(json);
+  Map<String, dynamic> toJson() => _$DependantInfoToJson(this);
+
+  @override
+  List<Object?> get props => [name, gender, dateOfBirth];
 }

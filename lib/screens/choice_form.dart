@@ -1,3 +1,4 @@
+import 'package:case_app/widgets/choice_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
@@ -5,16 +6,16 @@ import 'package:logging/logging.dart';
 
 class ChoiceForm extends StatelessWidget {
   static Image image = Image.asset('assets/images/icon.png');
-  final choiceBox = [
-    {'Products & Services': '/Products'},
-    {'Application Form': '/Application'},
-    {'Near Me': '/NearMe'},
-    {'Quotation': '/Quotation'},
-    {'Feedback & Inquires': '/Feedback'},
-    {'Contact Us': '/ContactUs'},
-    {'Provider Network': '/ProviderNetwork'},
-    {'Claim': '/ClaimForm'}
-  ];
+  final choiceBox = {
+    'Products & Services': '/Products',
+    'Application Form': '/Application',
+    'Near Me': '/NearMe',
+    'Quotation': '/Quotation',
+    'Feedback & Inquires': '/Feedback',
+    'Contact Us': '/ContactUs',
+    'Provider Network': '/ProviderNetwork',
+    'Claim': '/ClaimForm'
+    };
   static final _logger = Logger('Choice Form');
 
   @override
@@ -42,50 +43,19 @@ class ChoiceForm extends StatelessWidget {
                       child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 8.0, vertical: 20),
-                    child: GridView.builder(
+                    child: GridView(
                         physics: ClampingScrollPhysics(),
-                        itemCount: choiceBox.length,
+                        
                         gridDelegate:
                             SliverGridDelegateWithFixedCrossAxisCount(
                                 childAspectRatio: 2,
                                 crossAxisCount: 2),
-                        itemBuilder: (context, index) => Padding(
-                              padding: const EdgeInsets.only(
-                                  top: 8,
-                                  bottom: 8,
-                                  left: 0,
-                                  right: 0),
-                              child: MaterialButton(
-                                //choiceBox[index][choiceBox[index].keys.first]
+                                children: [
+                                  for(var entry in choiceBox.entries)
+                                  ChoiceButton(nameRoute: entry)
 
-                                onPressed: () {
-                                  Navigator.of(context).pushNamed(
-                                      choiceBox[index][
-                                          choiceBox[index]
-                                              .keys
-                                              .first]!);
-                                },
-                                splashColor: Colors.amber,
-                                hoverColor: Colors.red[200],
-                                //highlightColor: ,
-
-                                child: Container(
-                                  color: Colors.green,
-                                  child: Center(
-                                      child: Padding(
-                                    padding:
-                                        const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      '${choiceBox[index].keys.first}',
-                                      maxLines: 2,
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18),
-                                    ),
-                                  )),
-                                ),
-                              ),
-                            )),
+                                ],)
+                      
                   )),
                 ),
               ),
