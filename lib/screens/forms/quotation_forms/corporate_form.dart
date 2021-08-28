@@ -53,7 +53,7 @@ class CorporateForm extends StatelessWidget {
           onSaved: (text) {
             bloc.add(InputTypeOfBusiness(text));
           },
-          dropdownNames: [
+          dropdownValues: [
             'NGO',
             'Government Body',
             'School',

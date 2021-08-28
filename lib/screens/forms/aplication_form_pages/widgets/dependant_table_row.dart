@@ -29,12 +29,13 @@ class DependantTableRow extends TableRow {
           },
         ),
         FaridDropDown(
-          dropdownNames: ['Male', 'Female'],
+          dropdownValues: ['Male', 'Female'],
           onSaved: (text) {
            saver.saveData(InputGender(text));
           },
         ),
         FaridDateField(
+          
           height: 45,
           onSaved: (text) {
              saver.saveData(InputDateOfBirth(text));

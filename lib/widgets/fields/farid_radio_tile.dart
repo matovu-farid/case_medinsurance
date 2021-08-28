@@ -41,11 +41,11 @@ class _FaridRadioTileState extends State<FaridRadioTile> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
       children: <Widget>[
         if (widget.label != null) Text('${widget.label} : '),
         for (var i = 0; i < widget.radioList.length; i++)
-          Flexible(child: radioTileBulder(widget.radioList[i], i)),
+          radioTileBulder(widget.radioList[i], i),
       ],
     );
   }

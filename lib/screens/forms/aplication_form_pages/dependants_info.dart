@@ -11,11 +11,11 @@ import 'package:case_app/screens/forms/aplication_form_pages/widgets/dependant_t
 
 class DependantDetails extends StatelessWidget {
   final GlobalKey<FormState> formKey;
-  final PageController controller;
+  
 
   DependantDetails(
     this.formKey,
-    this.controller, {
+    {
     Key? key,
   }) : super(key: key);
 
@@ -52,7 +52,7 @@ class DependantDetails extends StatelessWidget {
               children: [
                 OutlinedButton(
                     onPressed: () {
-                      controller.previousPage(
+                      getIt<PageController>().previousPage(
                           duration: Duration(milliseconds: 200),
                           curve: Curves.easeOutBack);
                     },

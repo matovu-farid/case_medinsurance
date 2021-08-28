@@ -10,7 +10,7 @@ class ContactUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Contacts'),),
+      appBar: AppBar(title: Text('Contacts'),centerTitle: true,),
       body: FutureBuilder<Contacts>(
           future: Contacts.fromLocalJson('assets/json/contacts.json'),
           builder: (_, snapshot) {

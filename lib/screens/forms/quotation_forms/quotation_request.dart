@@ -31,9 +31,7 @@ class QuotationRequestState extends State<QuotationRequest> {
         centerTitle: true,
         title: Text(
           "Quotation Request",
-          style: TextStyle(
-            color: Colors.white,
-          ),
+          
         ),
       ),
       bottomNavigationBar: BlocBuilder<QuotationIndex, int>(

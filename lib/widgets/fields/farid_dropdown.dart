@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class FaridDropDown extends StatefulWidget {
-  final List<String> dropdownNames;
+  final List<String> dropdownValues;
   final String? label;
   final bool isCollapsed;
   final String? hint;
   final void Function(String?)? onSaved ;
   const FaridDropDown(
       {Key? key,
-      required this.dropdownNames,
+      required this.dropdownValues,
       this.label,
       this.isCollapsed = false,
       this.hint, this.onSaved})
@@ -23,7 +23,7 @@ class _FaridDropDownState extends State<FaridDropDown> {
   @override
   Widget build(BuildContext context) {
     List<DropdownMenuItem<String>> dropItems = [
-      ...widget.dropdownNames.map((name) => DropdownMenuItem<String>(
+      ...widget.dropdownValues.map((name) => DropdownMenuItem<String>(
             value: name,
             child: Text(name),
           )),

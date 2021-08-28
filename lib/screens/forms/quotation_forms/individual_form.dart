@@ -36,11 +36,21 @@ class IndividualForm extends StatelessWidget {
             bloc.add(InputEmail(text));
           },
         ),
-        FaridTextField(
+        FaridDropDown(
           label: 'Age Bracket',
           onSaved: (text) {
             bloc.add(InputAgeBracket(text));
-          },
+          }, dropdownValues: [
+            '0-15',
+            '16-25',
+            '26-35',
+            '36-45',
+            '46-55',
+            '56-65',
+            '66-75',
+            '76 and above'
+
+          ],
         ),
         FaridDropDown(
           label: 'Cover Type',
@@ -48,7 +58,7 @@ class IndividualForm extends StatelessWidget {
           onSaved: (text) {
             bloc.add(InputCoverType(text));
           },
-          dropdownNames: [
+          dropdownValues: [
             'Individual Cover',
             'Family Cover',
             'Antenatal Cover',

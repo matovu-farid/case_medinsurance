@@ -63,7 +63,7 @@ class InnitialLoading extends StatelessWidget {
 }
 
 class CaseApp extends StatelessWidget {
-  MaterialColor color = Colors.lightGreen;
+  MaterialColor color = Colors.green;
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -87,6 +87,7 @@ class CaseApp extends StatelessWidget {
                 },
                 theme: ThemeData(
                   primarySwatch: color,
+                  
                 ),
               ),
             );

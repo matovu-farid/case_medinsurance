@@ -24,11 +24,14 @@ class MySplashScreen extends StatelessWidget {
         Image(
             fit: BoxFit.cover,
             image: AssetImage('assets/images/background.jpg')),
-        Positioned.fill(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-            child: Image(
-              image: AssetImage('assets/images/icon.png'),
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Positioned.fill(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+              child: Image(
+                image: AssetImage('assets/images/icon.png'),
+              ),
             ),
           ),
         )

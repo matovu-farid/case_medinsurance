@@ -34,8 +34,7 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
         if (state is FormSendingFailure) return ErrorScreen(state.text, bloc);
         if (state is FormSent) return SuccessScreen(bloc);
         return Scaffold(
-          // key: scaffoldKey,
-          appBar: FeedbackAppBar(context),
+          appBar: AppBar(centerTitle: true,title: Text('Feedback & Inquiries'),),
           body: Form(
             key: formKey,
             child: ListView(
@@ -143,25 +142,4 @@ class _FeedbackInquiriesState extends State<FeedbackInquiries> {
   }
 }
 
-class FeedbackAppBar extends AppBar {
-  FeedbackAppBar(BuildContext context)
-      : super(
-            centerTitle: true,
-            title: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SizedBox(
-                        height: 40,
-                        width: MediaQuery.of(context).size.width * 0.2,
-                        child: ProductAndServices.partImage),
-                  ],
-                ),
-                Text(
-                  'FEEDBACK & INQUIRIES',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
-            ));
-}
+

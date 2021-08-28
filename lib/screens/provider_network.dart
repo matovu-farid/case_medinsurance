@@ -1,6 +1,7 @@
 import 'package:case_app/classes/cityProvider.dart';
 import 'package:case_app/classes/converter.dart';
 import 'package:case_app/classes/my_marker.dart';
+import 'package:case_app/widgets/city_search.dart';
 import 'package:case_app/widgets/my_indicator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dropdown_search/dropdown_search.dart';
@@ -62,10 +63,7 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
                             if (snapshot.hasData) {
                               var hospitals = snapshot.data;
                               var infoMap = ToInfoMap(hospitals).convert();
-                              // return CitySearch(
-                              //   markers: hospitals.toList(),
-                              //   label: 'Search centers near your city',
-                              // );
+                            
                                 return ListView.builder(
                                 itemCount: infoMap.length,
                                   itemBuilder: (_,index){
@@ -96,26 +94,4 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
   }
 }
 
-class CitySearch extends StatelessWidget {
-  final List<Marker> markers;
-  final String label;
-  final void Function(Marker?)? onChanged;
-  const CitySearch(
-      {Key? key, required this.markers, required this.label, this.onChanged})
-      : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return DropdownSearch<Marker>(
-      loadingBuilder: (_, value) {
-        return MyIndicator(Indicator.ballPulseSync);
-      },
-      onChanged: onChanged,
-      showSearchBox: true,
-      mode: Mode.MENU,
-      items: markers,
-      label: label,
-      itemAsString: (marker) => marker.infoWindow.title!,
-    );
-  }
-}

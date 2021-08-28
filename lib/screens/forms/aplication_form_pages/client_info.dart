@@ -10,10 +10,10 @@ import 'package:flutter/material.dart';
 
 class ClientInfo extends StatelessWidget {
   final GlobalKey<FormState> formKey;
-  final PageController controller;
+  
   ClientInfo(
     this.formKey,
-    this.controller, {
+     {
     Key? key,
   }) : super(key: key);
   var clientInfo = ClientData();
@@ -41,7 +41,7 @@ class ClientInfo extends StatelessWidget {
           },
         ),
         FaridDateField(
-          hint: 'DateOfBirth',
+          label: 'Date of Birth',
           onSaved: (date) {
             bloc.add(InputDateOfBirth(date));
           },
@@ -69,14 +69,7 @@ class ClientInfo extends StatelessWidget {
             bloc.add(InputAddress(address));
           },
         ),
-        // Padding(
-        //   padding: const EdgeInsets.all(8.0),
-        //   child: Text(
-        //       'Information regarding any Pre-existing medical conditions, regular medication,surgical operations:'),
-        // ),
-        // FaridTextField(
-        //   label: '',
-        // ),
+     
       ],
     );
   }

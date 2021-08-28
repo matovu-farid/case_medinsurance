@@ -34,9 +34,7 @@ class FaridTextField extends StatelessWidget {
           Flexible(
             flex: 7,
             child: TextFormField(
-              //expands: true,
-              //maxLines: null,
-              //minLines: null,
+     
               onSaved: onSaved,
               onChanged: (value) {},
               validator: (value) {
@@ -58,8 +56,7 @@ class FaridTextField extends StatelessWidget {
               },
               decoration: decoration ??
                   InputDecoration(
-                      // isDense: true,
-                      //isCollapsed: isCollapsed,
+               
                       border: OutlineInputBorder(
                     borderSide: BorderSide(width: 3, color: Colors.black),
                   )),

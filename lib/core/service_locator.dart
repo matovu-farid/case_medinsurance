@@ -15,6 +15,7 @@ import 'package:case_app/data_handlers/submitters/claim_submitter.dart';
 import 'package:case_app/data_handlers/submitters/dependant_submitter.dart';
 import 'package:case_app/data_handlers/submitters/feedback_submitter.dart';
 import 'package:case_app/data_handlers/submitters/quotation_submitter.dart';
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 GetIt getIt = GetIt.instance;
@@ -53,10 +54,18 @@ setup() {
       getIt<CooperateQuotationSaverImpl>(), getIt<QuotationSubmitter>()));
   getIt.registerLazySingleton(() => IndividualQuotationBloc(
       getIt<IndividualQuotationSaverImpl>(), getIt<QuotationSubmitter>()));
-      
+
 //application index
-  getIt.registerLazySingleton(() => ApplicationIndex());
+  getIt.registerSingleton( ApplicationIndex());
   //quotation index
   getIt.registerLazySingleton(() => QuotationIndex());
 
+  ///////////////////////////////////////////////////
+  //objects
+  var pageController = PageController();
+  getIt.registerSingleton<PageController>(pageController
+    ..addListener(() {
+      getIt<ApplicationIndex>().add(pageController.page!);
+    }));
+  ///////////////////////////////////////////////////
 }

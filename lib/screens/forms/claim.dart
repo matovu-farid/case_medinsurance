@@ -29,6 +29,7 @@ class ClaimForm extends StatelessWidget {
 
         return Scaffold(
           appBar: AppBar(
+            centerTitle: true,
             title: Text('Claim'),
           ),
           body: Form(
@@ -48,6 +49,7 @@ class ClaimForm extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: FaridDateField(
+                    label: 'Treatment Date',
                     hint: 'Treatment Date',
                     onSaved: (date) {
                       bloc.add(InputDateOfBirth(date));
