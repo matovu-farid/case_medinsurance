@@ -34,22 +34,9 @@ static final partImage = Image.asset('assets/icon/icon.png');
      ),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.lightGreen[200],
-        title: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                SizedBox(
-                    height: 40 ,
-                    width: MediaQuery.of(context).size.width * 0.2,
-                    child: partImage),
-              ],
-            ),
-            Text('PRODUCTS AND SERVICES',
-            style: TextStyle(color: Colors.lightGreen[400]),),
-          ],
-        ),),
+        
+        title: Text('PRODUCTS AND SERVICES',
+            ),),
       body: ListView.builder(
         itemCount: productServicesList.length,
 

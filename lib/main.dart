@@ -53,6 +53,8 @@ class InnitialLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+    
+      debugShowCheckedModeBanner: false,
         theme: ThemeData(primaryColor: Colors.lightGreen[400]),
         home: Scaffold(
           body: Center(
@@ -73,6 +75,8 @@ class CaseApp extends StatelessWidget {
             return KeyboardDismisser(
               gestures: [GestureType.onPanDown],
               child: MaterialApp(
+                      debugShowCheckedModeBanner: false,
+
                 routes: {
                   '/': (context) => StartingScreen(),
                   '/Choice': (context) => ChoiceForm(),

@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:653130125039:android:7d0ba70e75571cd2ed151a",
+        "mobilesdk_app_id": "1:653130125039:android:fa7633cff16090faed151a",
         "android_client_info": {
-          "package_name": "com.example.case_app"
+          "package_name": "com.faridorg.case_app"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "653130125039-64h68bs2hc7fkepjl8f0hq5g347enf4s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.faridorg.case_app",
+            "certificate_hash": "4ad9b48bf2fbc18fda5e03164d34112626f7a167"
+          }
+        },
         {
           "client_id": "653130125039-ffcn5kk82bmjutab2kiivgekvpkpntrh.apps.googleusercontent.com",
           "client_type": 3
