@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>653130125039-nldl0dp0bkb6b83st0uuvnln5seasipr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.653130125039-nldl0dp0bkb6b83st0uuvnln5seasipr</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>653130125039-1p9sdg2mliqs55ou5st82srq6kguahed.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC0SIU7FLlaPiPMyTAIRXq7ox57nViPZRg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>653130125039</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.faridorg.caseapp</string>
+	<key>PROJECT_ID</key>
+	<string>caseapp-8a255</string>
+	<key>STORAGE_BUCKET</key>
+	<string>caseapp-8a255.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:653130125039:ios:61af6748d2806f7eed151a</string>
+	<key>DATABASE_URL</key>
+	<string>https://caseapp-8a255.firebaseio.com</string>
+</dict>
+</plist>
