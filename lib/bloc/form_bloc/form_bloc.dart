@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:case_app/data_handlers/savers/form_saver.dart';
@@ -21,14 +22,17 @@ class FormBloc extends Bloc<FormEvent, MyFormState> {
   Stream<MyFormState> mapEventToState(
     FormEvent event,
   ) async* {
-    if (event is ResetForm) {
+    if (event is AttachDocument) {
+      yield FormLoading();
+      _mapAttachDocumentEvent(event);
+    } else if (event is ResetForm) {
       saver.reset();
       yield FormInitial();
     } else if (event is InputFormEvent) {
       yield _mapInputEvent(event);
     } else {
       if (event is SubmitForm) {
-        yield FormSending();
+        yield FormLoading();
 
         yield await _mapSubmitEvent(event);
       }
@@ -42,14 +46,20 @@ class FormBloc extends Bloc<FormEvent, MyFormState> {
     return FormInitial();
   }
 
+  _mapAttachDocumentEvent(AttachDocument event)async {
+    await saver.saveDocument(event);
+    add(SubmitForm());
+  }
+
   static final _logger = Logger('Form Bloc');
 
   Future<MyFormState> _mapSubmitEvent(SubmitForm event) async {
     var formInfo = saver.fetchInfo();
+    var attachment = saver.file;
     _logger.warning(formInfo);
-    
+
     return submitter
-        .submit(formInfo)
+        .submit(formInfo, attachment)
         .fold((l) => FormSendingFailure(l.text), (r) => FormSent());
   }
 }

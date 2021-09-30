@@ -26,7 +26,7 @@ class ApplicationForm extends StatelessWidget {
     return BlocBuilder<ApplicationBloc, MyFormState>(
       bloc: bloc,
       builder: (context, state) {
-        if (state is FormSending) return LoadingScreen();
+        if (state is FormLoading) return LoadingScreen();
         if (state is FormSendingFailure) return ErrorScreen(state.text,bloc);
         if (state is FormSent) return SuccessScreen(bloc);
         return Scaffold(

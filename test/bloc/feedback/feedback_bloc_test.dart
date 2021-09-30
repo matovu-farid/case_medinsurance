@@ -42,7 +42,7 @@ main() {
       act: (bloc) {
         bloc.add(SubmitForm());
       },
-      expect: () => [FormSending(), FormSent()],
+      expect: () => [FormLoading(), FormSent()],
       verify: (bloc) {
         verify(bloc.saver.fetchInfo()).called(1);
       });

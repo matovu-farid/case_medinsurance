@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:case_app/classes/feedback_info.dart';
 import 'package:case_app/core/failure.dart';
 import 'package:case_app/data_handlers/submitters/form_submitter.dart';
@@ -8,7 +11,7 @@ abstract class FeedbackSubmitter extends FormSubmitter<FeedbackInfo> {}
 
 class FeedbackSubmitterImpl extends FeedbackSubmitter with FirebaseMixin {
   @override
-  Either<Failure, void> submit(FeedbackInfo info) {
+  Either<Failure, void> submit(FeedbackInfo info, [File? file]) {
     try {
       return Right(call('sendFeedback', info.toJson()));
     } catch (e) {

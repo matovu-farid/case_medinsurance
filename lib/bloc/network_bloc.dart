@@ -21,7 +21,7 @@ abstract class NetworkBloc  {
   Stream<Set<Marker>> getMarkers();
 
   @protected
-  Set<Marker> docToMarker(List<DocumentSnapshot<Map<String,dynamic>>> documents);
+  Set<Marker> docsToMarker(List<DocumentSnapshot<Map<String,dynamic>>> documents);
 }
 
 class Locator {
@@ -95,10 +95,10 @@ class ProviderNetworkBloc extends NetworkBloc {
     return radiusHandler.radius
         .switchMap((rad) => geo.collection(collectionRef: ref).within(
             center: center, radius: rad, field: 'position', strictMode: true))
-        .map(docToMarker);
+        .map(docsToMarker);
   }
 
-  Set<Marker> docToMarker(List<DocumentSnapshot<Map<String,dynamic>>> documents) {
+  Set<Marker> docsToMarker(List<DocumentSnapshot<Map<String,dynamic>>> documents) {
     return documents.map((doc) {
       
       GeoPoint point = doc.data()!['position']['geopoint'];

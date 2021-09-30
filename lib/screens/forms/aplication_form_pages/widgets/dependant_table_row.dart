@@ -8,6 +8,7 @@ import 'package:case_app/widgets/fields/date_textfield.dart';
 import 'package:case_app/widgets/fields/farid_dropdown.dart';
 import 'package:case_app/widgets/fields/farid_textfield.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class DependantTableRow extends TableRow {
   final int index;
@@ -15,32 +16,51 @@ class DependantTableRow extends TableRow {
   late final submitter = getIt<DependantSubmitter>();
 
   DependantTableRow(this.index);
+  
+
   @override
   List<Widget>? get children => [
-        Center(
-          child: Text('${index + 1}'),
+        TableCell(
+           verticalAlignment: TableCellVerticalAlignment.middle,
+          child: Center(
+  
+            child: Text('${index + 1}'),
+          ),
         ),
-        FaridTextField(
-          fieldHeight: 45,
-          type: FieldType.optional,
-          onSaved: (text) {
-            saver.saveData(InputName(text));
-          
-          },
+        TableCell(
+           verticalAlignment: TableCellVerticalAlignment.middle,
+          child: FaridTextField(
+            decoration: InputDecoration(border: InputBorder.none),
+            fieldHeight: 45,
+            type: FieldType.optional,
+            onSaved: (text) {
+              saver.saveData(InputName(text));
+            
+            },
+          ),
         ),
-        FaridDropDown(
-          dropdownValues: ['Male', 'Female'],
-          onSaved: (text) {
-           saver.saveData(InputGender(text));
-          },
+        TableCell(
+          verticalAlignment: TableCellVerticalAlignment.middle,
+          child: FaridDropDown(
+                decoration: InputDecoration(border: InputBorder.none),
+        
+            dropdownValues: ['Male', 'Female'],
+            onSaved: (text) {
+             saver.saveData(InputGender(text));
+            },
+          ),
         ),
-        FaridDateField(
-          
-          height: 45,
-          onSaved: (text) {
-             saver.saveData(InputDateOfBirth(text));
-               submitter.submit(saver.fetchInfo());
-          },
+        TableCell(
+           verticalAlignment: TableCellVerticalAlignment.fill,
+          child: FaridDateField(
+            decoration: InputDecoration(border: InputBorder.none),
+            
+            height: 45,
+            onSaved: (text) {
+               saver.saveData(InputDateOfBirth(text));
+                 submitter.submit(saver.fetchInfo());
+            },
+          ),
         ),
       ];
 }

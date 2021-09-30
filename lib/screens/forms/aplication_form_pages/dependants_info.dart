@@ -45,7 +45,7 @@ class DependantDetails extends StatelessWidget {
                     Center(child: Text('Date of Birth')),
                   ],
                 ),
-                for (var i = 0; i < 3; i++) DependantTableRow(i)
+                for (var i = 0; i < 5; i++) DependantTableRow(i)
               ],
             ),
             ButtonBar(

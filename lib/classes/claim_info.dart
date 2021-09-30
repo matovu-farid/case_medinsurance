@@ -5,8 +5,10 @@ class ClaimInfo {
   String? bankingDetails;
   String? authorizedOfficer;
   String? reason;
+  String? name;
   Map<String, dynamic> toJson() {
     return {
+      'name':name,
       'phoneNumber': phoneNumber,
       'treatmentDate': treatmentDate,
       'claimAmount': claimAmount,

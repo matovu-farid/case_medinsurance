@@ -1,4 +1,6 @@
 import 'dart:ffi';
+import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:case_app/classes/quotation_info.dart';
 import 'package:case_app/core/failure.dart';
@@ -12,7 +14,7 @@ abstract class QuotationSubmitter extends FormSubmitter<QuotationInfo> {}
 class QuotationSubmitterImpl extends QuotationSubmitter with FirebaseMixin {
   static final _logger = Logger('Quotation Submitter');
   @override
-  Either<Failure, void> submit(QuotationInfo info) {
+  Either<Failure, void> submit(QuotationInfo info, [File? file]) {
     try {
       if (info is IndividualQuotationInfo) {
         _logger.warning('individual quotaion sent of\n ${info.toJson}');

@@ -16,4 +16,4 @@ class FormSendingFailure extends MyFormState {
 
 class FormSent extends MyFormState {}
 
-class FormSending extends MyFormState {}
+class FormLoading extends MyFormState {}

@@ -75,7 +75,7 @@ class IndividualForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<IndividualQuotationBloc, MyFormState>(
       builder: (context, state) {
-          if (state is FormSending) return LoadingWidget();
+          if (state is FormLoading) return LoadingWidget();
         if (state is FormSendingFailure) return ErrorsWidget(state.text,bloc);
         if (state is FormSent) return SuccessWidget(bloc);
         return Form(

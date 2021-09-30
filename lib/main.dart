@@ -1,5 +1,4 @@
-import 'package:case_app/bloc/quotation_index.dart';
-import 'package:case_app/bloc/send_mail.dart';
+
 import 'package:case_app/core/service_locator.dart';
 import 'package:case_app/screens/forms/aplication_form_pages/application_form.dart';
 import 'package:case_app/screens/choice_form.dart';
@@ -19,8 +18,7 @@ import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:logging/logging.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:case_app/bloc/application_form_index.dart';
+
 
 import 'core/provider.dart';
 
@@ -80,14 +78,7 @@ class CaseApp extends StatelessWidget {
                 routes: {
                   '/': (context) => StartingScreen(),
                   '/Choice': (context) => ChoiceForm(),
-                  '/Application': (context) => ApplicationForm(),
-                  '/Feedback': (context) => FeedbackInquiries(),
-                  '/Products': (context) => ProductAndServices(),
-                  '/Quotation': (context) => QuotationRequest(),
-                  '/NearMe': (context) => NearMe(),
-                  '/ProviderNetwork': (context) => ProviderNetwork(),
-                  '/ContactUs': (context) => ContactUs(),
-                  '/ClaimForm': (context) => ClaimForm(),
+                  
                 },
                 theme: ThemeData(
                   primarySwatch: color,

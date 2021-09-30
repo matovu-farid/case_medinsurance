@@ -36,6 +36,9 @@ static final partImage = Image.asset('assets/icon/icon.png');
         centerTitle: true,
         
         title: Text('PRODUCTS AND SERVICES',
+        
+        style: TextStyle(fontSize: 16),
+        
             ),),
       body: ListView.builder(
         itemCount: productServicesList.length,

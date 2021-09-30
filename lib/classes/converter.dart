@@ -9,6 +9,10 @@ abstract class Converter<T, R> {
 
 class ToPosition extends Converter<LatLng, Position> {
   ToPosition(LatLng latLng) : super(latLng);
+  Position call() {
+    return convert();
+  }
+
   Position convert() {
     return Position(
         latitude: t.latitude,

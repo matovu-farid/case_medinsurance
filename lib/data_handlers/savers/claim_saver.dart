@@ -16,7 +16,11 @@ class ClaimSaverImpl extends ClaimSaver {
 
   @override
   void saveData(InputFormEvent event) {
-    if (event is InputPhoneNumber) {
+    if (event is InputDateOfBirth) {
+      claimInfo.treatmentDate = event.text;
+    } else if (event is InputName) {
+      claimInfo.name = event.text;
+    } else if (event is InputPhoneNumber) {
       claimInfo.phoneNumber = event.text;
     } else if (event is InputTreatmentDate) {
       claimInfo.treatmentDate = event.text;

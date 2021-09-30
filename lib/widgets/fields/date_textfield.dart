@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 class FaridDateField extends StatefulWidget {
-
- 
   final String? label;
   String? hint;
   double? height;
+  InputDecoration? decoration;
   void Function(String?)? onSaved;
   FaridDateField({
     Key? key,
@@ -15,6 +14,7 @@ class FaridDateField extends StatefulWidget {
     this.hint,
     this.height,
     this.onSaved,
+    this.decoration
   }) : super(key: key);
 
   @override
@@ -25,16 +25,13 @@ class _FaridDateFieldState extends State<FaridDateField> {
   @override
   Widget build(BuildContext context) {
     return DateTimePicker(
-      decoration: InputDecoration(
-        hintText: widget.hint,
-        
-        labelText: widget.label,
-        border: OutlineInputBorder()
-      ),
-     
+      decoration:(widget.decoration!=null)? widget.decoration
+          :InputDecoration(
+          hintText: widget.hint,
+          labelText: widget.label,
+          border: OutlineInputBorder()),
       firstDate: DateTime(1900),
       lastDate: DateTime(2100),
-     
       validator: (val) {
         if (val == null || val.isEmpty) return 'Enter a value';
         return null;
@@ -43,4 +40,3 @@ class _FaridDateFieldState extends State<FaridDateField> {
     );
   }
 }
-

@@ -16,7 +16,9 @@ abstract class InputFormEvent extends FormEvent {
 
   InputFormEvent(this.text);
 }
-
+abstract class AttachDocument extends FormEvent{}
+class AttachFromCamera extends AttachDocument {}
+class AttachFromGallery extends AttachDocument {}
 class SubmitForm extends FormEvent {
   @override
   List<Object?> get props => [];

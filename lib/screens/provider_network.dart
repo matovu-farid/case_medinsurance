@@ -21,6 +21,11 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
   var firestore = FirebaseFirestore.instance;
 
   var cityProviders = CityProviders();
+  @override
+  void initState() {
+    super.initState();
+    cityProviders.setCurrentToDefault();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +40,7 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
               if (snapshot.hasData) {
                 var markers = snapshot.data!;
                 cityProviders.addToCities(markers);
-                cityProviders.setcurrentCity(
-                    ToPosition(markers.first.position).convert());
+                
 
                 return Column(
                   children: [
@@ -45,12 +49,11 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
                         padding: const EdgeInsets.all(8.0),
                         child: CitySearch(
                           // value: cityProviders.currentCity,
-
+                          defaultCity: cityProviders.defaultCity(),
                           onChanged: (val) {
-                            if(val!=null)
-                            cityProviders.setcurrentCity(
-                              
-                                ToPosition(val.position).convert());
+                            if (val != null)
+                              cityProviders.setcurrentCity(
+                                  ToPosition(val.position).convert());
                           },
                           markers: markers.toList(), label: 'Search City',
                         ),
@@ -63,24 +66,24 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
                             if (snapshot.hasData) {
                               var hospitals = snapshot.data;
                               var infoMap = ToInfoMap(hospitals).convert();
-                            
-                                return ListView.builder(
-                                itemCount: infoMap.length,
-                                  itemBuilder: (_,index){
-                              
-                              
-                                return Card(
-                                  child: ListTile(
-                                    title: Text('${infoMap.keys.elementAt(index)}'),
-                                    subtitle: Text('${infoMap.keys.elementAt(index)}'),
-                                  ),
-                                );
-                              });
+
+                              return ListView.builder(
+                                  itemCount: infoMap.length,
+                                  itemBuilder: (_, index) {
+                                    return Card(
+                                      child: ListTile(
+                                        title: Text(
+                                            '${infoMap.keys.elementAt(index)}'),
+                                        subtitle: Text(
+                                            '${infoMap.keys.elementAt(index)}'),
+                                      ),
+                                    );
+                                  });
                             }
                             return SizedBox(
-                              height: 50,
-                              width: 50,
-                              child: MyIndicator(Indicator.circleStrokeSpin));
+                                height: 50,
+                                width: 50,
+                                child: MyIndicator(Indicator.circleStrokeSpin));
                           }),
                     )
                   ],
@@ -93,5 +96,3 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
     );
   }
 }
-
-

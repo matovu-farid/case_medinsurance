@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:case_app/classes/aplication_info.dart/application_info.dart';
 import 'package:case_app/core/failure.dart';
 import 'package:case_app/data_handlers/submitters/form_submitter.dart';
@@ -8,7 +11,7 @@ abstract class ApplicationSubmitter extends FormSubmitter<ApplicationInfo> {}
 
 class ApplicationSubmitterImpl extends ApplicationSubmitter with FirebaseMixin {
   @override
-  Either<Failure, void> submit(ApplicationInfo info) {
+  Either<Failure, void> submit(ApplicationInfo info, [File? file]) {
     try {
       return Right(call('sendApplicationWithDependants', info.toJson()));
     } on Exception catch (e) {

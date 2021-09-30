@@ -23,8 +23,8 @@ class ClaimForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ClaimBloc, MyFormState>(
       builder: (context, state) {
-          if (state is FormSending) return LoadingScreen();
-        if (state is FormSendingFailure) return ErrorScreen(state.text,bloc);
+        if (state is FormLoading) return LoadingScreen();
+        if (state is FormSendingFailure) return ErrorScreen(state.text, bloc);
         if (state is FormSent) return SuccessScreen(bloc);
 
         return Scaffold(
@@ -38,6 +38,12 @@ class ClaimForm extends StatelessWidget {
               padding: EdgeInsets.only(top: 8, bottom: 8),
               shrinkWrap: true,
               children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                      decoration: InputDecoration(hintText: "Name"),
+                      onSaved: (text) => bloc.add(InputName(text))),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: FaridPhoneField(
@@ -71,7 +77,7 @@ class ClaimForm extends StatelessWidget {
                   child: TextFormField(
                       decoration: InputDecoration(hintText: "Banking Details"),
                       onSaved: (text) => bloc.add(InputBankingDetails(text))),
-                ),
+                ), 
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
@@ -91,13 +97,15 @@ class ClaimForm extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
-                    child: Text("Upload claim documents"),
+                    child: Text("Attach claim documents"),
                     onPressed: () {
                       var formstate = formKey.currentState!;
                       if (formstate.validate()) {
                         formstate.save();
+                        
+                        addAttachment(context);
 
-                        bloc.add(SubmitForm());
+                       
                       }
                     },
                   ),
@@ -108,5 +116,31 @@ class ClaimForm extends StatelessWidget {
         );
       },
     );
+  }
+
+  void addAttachment(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (_) {
+          return AlertDialog(
+            title: Text('Attachment'),
+            content: Text('Add document'),
+            actions: [
+      
+              TextButton(
+                  onPressed: () {
+                    bloc.add(AttachFromCamera());
+                     Navigator.of(context).pop();
+                  },
+                  child: Text('Camera')),
+                  TextButton(
+                  onPressed: () {
+                    bloc.add(AttachFromGallery());
+                     Navigator.of(context).pop();
+                  },
+                  child: Text('Gallery')),
+            ],
+          );
+        });
   }
 }
