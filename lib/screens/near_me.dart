@@ -29,8 +29,6 @@ class _NearMeState extends State<NearMe> {
         child: Center(
             child: Stack(
           children: [
-           
-             
                  FutureBuilder<Position>(
                     future: locator.getCurrentLocation(),
                     builder: (context, snapshot) {

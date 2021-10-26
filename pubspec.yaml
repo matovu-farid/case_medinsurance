@@ -37,7 +37,7 @@ dependencies:
   flutter_datetime_picker: ^1.5.1
   flutter_document_picker: ^5.0.1-nullsafety.0
   flutter_image_compress: ^1.1.0
-  flutter_launcher_icons: ^0.9.0
+  
   font_awesome_flutter: ^9.1.0
   form_field_validator: ^1.1.0
   geoflutterfire: ^3.0.0-nullsafety.4
@@ -57,16 +57,15 @@ dependencies:
   rxdart: ^0.27.1
   uuid: ^3.0.4
 
-flutter_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/icon/icon.png"
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
 
 dev_dependencies:
+  flutter_native_splash: ^1.2.4
+  flutter_launcher_icons: "^0.9.2"
   flutter_app_name: ^0.1.0
   build_runner: ^2.0.5
   change_app_package_name: ^1.0.0
@@ -74,7 +73,15 @@ dev_dependencies:
     sdk: flutter
 flutter_app_name:
   name: "CASE MedInsurance"
-#   flutter_launcher_name: null
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+ 
+flutter_native_splash:
+  background_image: assets/images/splash.png
+  #   flutter_launcher_name: null
 # flutter_launcher_name:
 #   name: "case"
 # For information on the generic Dart part of this file, see the

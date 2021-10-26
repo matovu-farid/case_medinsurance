@@ -1,15 +1,7 @@
 
 import 'package:case_app/core/service_locator.dart';
-import 'package:case_app/screens/forms/aplication_form_pages/application_form.dart';
 import 'package:case_app/screens/choice_form.dart';
-import 'package:case_app/screens/forms/claim.dart';
-import 'package:case_app/screens/provider_network.dart';
-import 'package:case_app/screens/contact_us.dart';
-import 'package:case_app/screens/forms/feedback_and_inquiries.dart';
-import 'package:case_app/screens/products_and_services.dart';
-import 'package:case_app/screens/near_me.dart';
-import 'package:case_app/screens/forms/quotation_forms/quotation_request.dart';
-import 'package:case_app/screens/starting_screen.dart';
+
 import 'package:case_app/widgets/my_indicator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +68,7 @@ class CaseApp extends StatelessWidget {
                       debugShowCheckedModeBanner: false,
 
                 routes: {
-                  '/': (context) => StartingScreen(),
+                  '/': (context) => ChoiceForm(),
                   '/Choice': (context) => ChoiceForm(),
                   
                 },
