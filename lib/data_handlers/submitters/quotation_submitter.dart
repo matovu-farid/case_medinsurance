@@ -1,6 +1,4 @@
-import 'dart:ffi';
 import 'dart:io';
-import 'dart:typed_data';
 
 import 'package:case_app/classes/quotation_info.dart';
 import 'package:case_app/core/failure.dart';

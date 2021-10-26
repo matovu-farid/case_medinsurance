@@ -1,4 +1,3 @@
-
 import 'package:case_app/bloc/network_bloc.dart';
 import 'package:case_app/widgets/my_indicator.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,8 +8,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 import 'package:logging/logging.dart';
-
-
+import 'package:permission_handler/permission_handler.dart';
 
 class NearMe extends StatefulWidget {
   @override
@@ -18,9 +16,7 @@ class NearMe extends StatefulWidget {
 }
 
 class _NearMeState extends State<NearMe> {
-
-static final _logger = Logger('Provider Network');
-
+  static final _logger = Logger('Provider Network');
 
   @override
   Widget build(BuildContext context) {
@@ -28,19 +24,24 @@ static final _logger = Logger('Provider Network');
     var locator = Locator();
 
     return Scaffold(
-      
+      appBar: AppBar(),
       body: Container(
         child: Center(
             child: Stack(
           children: [
-            FutureBuilder<Position>(
-              future: locator.getCurrentLocation(),
-              builder: (context, snapshot) {
-                if(snapshot.connectionState == ConnectionState.done)
-                return FireMap(center: snapshot.data,);
-                return MyIndicator(Indicator.ballPulseRise);
-              }
-            ),
+           
+             
+                 FutureBuilder<Position>(
+                    future: locator.getCurrentLocation(),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.done)
+                        return FireMap(
+                          center: snapshot.data,
+                        );
+                      return MyIndicator(Indicator.ballPulseRise);
+                    })
+              
+           
           ],
         )),
       ),
@@ -60,16 +61,14 @@ class FireMap extends StatefulWidget {
 class _FireMapState extends State<FireMap> {
   late GoogleMapController _controller;
 
-
   static final _logger = Logger('Fire Map');
   @override
   void initState() {
     networkBloc = ProviderNetworkBloc(widget.center);
     super.initState();
   }
-  ProviderNetworkBloc?  networkBloc;
 
-
+  ProviderNetworkBloc? networkBloc;
 
   @override
   Widget build(BuildContext context) {
@@ -88,18 +87,20 @@ class _FireMapState extends State<FireMap> {
                   markers: snapshot.data!,
                   mapType: MapType.normal,
                   initialCameraPosition: CameraPosition(
-                      target: LatLng(widget.center!.latitude, widget.center!.longitude),
+                      target: LatLng(
+                          widget.center!.latitude, widget.center!.longitude),
                       zoom: 12),
                   gestureRecognizers: Set()
                     ..add(Factory<PanGestureRecognizer>(
-                            () => PanGestureRecognizer())),
+                        () => PanGestureRecognizer())),
                   onMapCreated: (controller) {
                     setState(() {
                       _controller = controller;
 
                       _controller.moveCamera(CameraUpdate.newCameraPosition(
                           CameraPosition(
-                              target: LatLng(widget.center!.latitude, widget.center!.longitude),
+                              target: LatLng(widget.center!.latitude,
+                                  widget.center!.longitude),
                               zoom: 15)));
                     });
                   },
@@ -112,16 +113,17 @@ class _FireMapState extends State<FireMap> {
     );
   }
 }
+
 class VisiblilitySlider extends StatefulWidget {
   final ProviderNetworkBloc? networkBloc;
-  const VisiblilitySlider({Key? key,required this.networkBloc}) : super(key: key);
+  const VisiblilitySlider({Key? key, required this.networkBloc})
+      : super(key: key);
 
   @override
   _VisiblilitySliderState createState() => _VisiblilitySliderState();
 }
 
 class _VisiblilitySliderState extends State<VisiblilitySlider> {
-
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -136,7 +138,6 @@ class _VisiblilitySliderState extends State<VisiblilitySlider> {
           label: 'Radius ${widget.networkBloc!.radiusHandler.radiusValue} km',
           onChanged: (radius) {
             setState(() {
-
               widget.networkBloc!.radiusHandler.addToRadius(radius);
             });
           },
@@ -145,3 +146,13 @@ class _VisiblilitySliderState extends State<VisiblilitySlider> {
   }
 }
 
+Future checkLocation()async{
+    var status = await Permission.locationWhenInUse.status;
+    if (status.isPermanentlyDenied) {
+      openAppSettings();
+    }
+    if (!status.isGranted) {
+      await Permission.locationWhenInUse.request();
+    }
+        
+}

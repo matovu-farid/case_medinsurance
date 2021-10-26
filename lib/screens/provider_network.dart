@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:loading_indicator/loading_indicator.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class ProviderNetwork extends StatefulWidget {
   ProviderNetwork({Key? key}) : super(key: key);
@@ -21,10 +22,12 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
   var firestore = FirebaseFirestore.instance;
 
   var cityProviders = CityProviders();
-  @override
-  void initState() {
+ 
+   @override
+  void initState()  {
     super.initState();
     cityProviders.setCurrentToDefault();
+
   }
 
   @override
