@@ -23,46 +23,52 @@ class FaridTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 3),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          if (label != null)
+      child: Container(
+
+        width: 200,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            if (label != null)
+              Flexible(
+                flex: 3,
+                child: Text('$label '),
+              ),
             Flexible(
-              flex: 3,
-              child: Text('$label '),
-            ),
-          Flexible(
-            flex: 7,
-            child: TextFormField(
-     
-              onSaved: onSaved,
-              onChanged: (value) {},
-              validator: (value) {
-                switch (type) {
-                  case FieldType.email:
-                    return MultiValidator(<FieldValidator>[
-                      EmailValidator(errorText: 'Enter a valid email'),
-                      RequiredValidator(errorText: 'This field is required')
-                    ]).call(value);
-
-                  case FieldType.dafault:
-                    return RequiredValidator(
-                            errorText: 'This field is required')
-                        .call(value);
-
-                  default:
-                    return null;
-                }
-              },
-              decoration: decoration ??
-                  InputDecoration(
-               
-                      border: OutlineInputBorder(
-                    borderSide: BorderSide(width: 3, color: Colors.black),
-                  )),
-            ),
-          )
-        ],
+              flex: 7,
+              child: TextFormField(
+           
+                onSaved: onSaved,
+                onChanged: (value) {},
+                validator: (value) {
+                  switch (type) {
+                    case FieldType.email:
+                      return MultiValidator(<FieldValidator>[
+                        EmailValidator(errorText: 'Enter a valid email'),
+                        RequiredValidator(errorText: 'This field is required')
+                      ]).call(value);
+          
+                    case FieldType.dafault:
+                      return RequiredValidator(
+                              errorText: 'This field is required')
+                          .call(value);
+          
+                    default:
+                      return null;
+                  }
+                },
+                decoration: decoration ??
+                    InputDecoration(
+                 
+                        border: OutlineInputBorder(
+                      borderSide: BorderSide(width: 3, color: Colors.black),
+                    )),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

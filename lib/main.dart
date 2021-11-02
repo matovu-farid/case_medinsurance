@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 import 'package:case_app/core/service_locator.dart';
 import 'package:case_app/screens/choice_form.dart';
 
@@ -42,6 +44,19 @@ class InnitialLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if(Platform.isIOS){
+      return MaterialApp(
+        
+      debugShowCheckedModeBanner: false,
+        theme: ThemeData(primaryColor: Colors.lightGreen[400]),
+        home: CupertinoApp(
+          home: Scaffold(
+            body: Center(
+              child: MyIndicator(Indicator.ballZigZag),
+            ),
+          ),
+        ));
+    }
     return MaterialApp(
     
       debugShowCheckedModeBanner: false,

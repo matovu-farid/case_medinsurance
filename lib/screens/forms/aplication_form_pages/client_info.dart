@@ -22,6 +22,7 @@ class ClientInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 3),
       children: [
         FaridTextField(
