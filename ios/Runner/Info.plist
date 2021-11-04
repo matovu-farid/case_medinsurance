@@ -5,7 +5,9 @@
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
 		<key>NSLocationWhenInUseUsageDescription</key>
-		<string>This application requires location services to work</string>
+		<string>This app needs access to location services to view the nearest hospitals to the user</string>
+		<key>NSLocationAlwaysUsageDescription</key>
+        <string>This app needs access to location services to keep the view of the nearest hospitals to the user.</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
@@ -28,6 +30,10 @@
 		<string>LaunchScreen</string>
 		<key>UIMainStoryboardFile</key>
 		<string>Main</string>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string>The permission is required to add claim document proof inform of an image to the claim submitted</string>
+
+
 		<key>UISupportedInterfaceOrientations</key>
 		<array>
 			<string>UIInterfaceOrientationPortrait</string>

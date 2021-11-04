@@ -411,8 +411,6 @@ PODS:
     - FirebaseCore (~> 8.0)
     - GTMSessionFetcher/Core (~> 1.5)
   - Flutter (1.0.0)
-  - flutter_document_picker (0.0.1):
-    - Flutter
   - flutter_image_compress (0.0.1):
     - Flutter
     - Mantle
@@ -509,7 +507,6 @@ DEPENDENCIES:
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - firebase_storage (from `.symlinks/plugins/firebase_storage/ios`)
   - Flutter (from `Flutter`)
-  - flutter_document_picker (from `.symlinks/plugins/flutter_document_picker/ios`)
   - flutter_image_compress (from `.symlinks/plugins/flutter_image_compress/ios`)
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
   - google_maps_flutter (from `.symlinks/plugins/google_maps_flutter/ios`)
@@ -554,8 +551,6 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_storage/ios"
   Flutter:
     :path: Flutter
-  flutter_document_picker:
-    :path: ".symlinks/plugins/flutter_document_picker/ios"
   flutter_image_compress:
     :path: ".symlinks/plugins/flutter_image_compress/ios"
   geolocator_apple:
@@ -583,7 +578,6 @@ SPEC CHECKSUMS:
   FirebaseFunctions: 747034115d113cf600c4995ff7e4d384697e7c49
   FirebaseStorage: 54ff752ecbd27f1c354c3f5e8c55f6ad5783699b
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  flutter_document_picker: 109ba1c4622e6e62bfced17c22ff544a9a3541f4
   flutter_image_compress: fd2b476345226e1a10ea352fa306af95704642c1
   geolocator_apple: b741765c55dc21950e3e106e8b3584e55cf81ce5
   google_maps_flutter: abdb8dee6c52d4be36ad131ee6ebfacd14417c5a

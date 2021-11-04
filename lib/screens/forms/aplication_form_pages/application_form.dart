@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:case_app/bloc/application/application_bloc.dart';
 import 'package:case_app/bloc/application_form_index.dart';
 import 'package:case_app/bloc/form_bloc/form_bloc.dart';
@@ -6,6 +8,7 @@ import 'package:case_app/screens/products_and_services.dart';
 import 'package:case_app/widgets/submit_screens/error_screen.dart';
 import 'package:case_app/widgets/submit_screens/loading_screen.dart';
 import 'package:case_app/widgets/submit_screens/submit_success_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:form_field_validator/form_field_validator.dart';
@@ -29,49 +32,77 @@ class ApplicationForm extends StatelessWidget {
         if (state is FormLoading) return LoadingScreen();
         if (state is FormSendingFailure) return ErrorScreen(state.text,bloc);
         if (state is FormSent) return SuccessScreen(bloc);
-        return Scaffold(
-          appBar: AppBar(centerTitle: true,title: Text('Application Form'),),
-          body: Form(
-            key: _formKey,
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Flexible(
-                      child: Container(
-                        child: PageView(
-                          allowImplicitScrolling: true,
-                          controller: getIt<PageController>(),
-                          
-                          children: [
-                            ClientInfo(_formKey),
-                            DependantDetails(_formKey),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: BlocBuilder<ApplicationIndex, int>(
-                        builder: (context, state) {
-                          return PageViewDotIndicator(
-                            currentItem: state,
-                            count: 2,
-                            unselectedColor: Colors.black26,
-                            selectedColor: Colors.blue,
-                            duration: Duration(milliseconds: 2),
-                          );
-                        },
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
+        if (Platform.isIOS) {
+      return CupertinoPageScaffold(
+        
+        
+          navigationBar: CupertinoNavigationBar(
+            middle:  Text(
+          'Application Form',
+          style: TextStyle(fontSize: 16),
+        ),
           ),
+          child: _Body(formKey: _formKey));
+    }else
+        return Scaffold(
+          appBar: AppBar(
+           
+            centerTitle: true,title: Text('Application Form'),),
+          body: _Body(formKey: _formKey),
         );
       },
+    );
+  }
+}
+
+class _Body extends StatelessWidget {
+  const _Body({
+    Key? key,
+    required GlobalKey<FormState> formKey,
+  }) : _formKey = formKey, super(key: key);
+
+  final GlobalKey<FormState> _formKey;
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Flexible(
+                child: Container(
+                  child: PageView(
+                    allowImplicitScrolling: true,
+                    controller: getIt<PageController>(),
+                    
+                    children: [
+                      ClientInfo(_formKey),
+                      DependantDetails(_formKey),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: BlocBuilder<ApplicationIndex, int>(
+                  builder: (context, state) {
+                    return PageViewDotIndicator(
+                      currentItem: state,
+                      count: 2,
+                      unselectedColor: Colors.black26,
+                      selectedColor: Colors.blue,
+                      duration: Duration(milliseconds: 2),
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

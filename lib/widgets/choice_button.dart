@@ -14,7 +14,6 @@ class ChoiceButton extends StatelessWidget {
       child: MaterialButton(
         onPressed: onPressed,
         splashColor: Colors.amber,
-        hoverColor: Colors.red[200],
         child: Container(
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(15)),

@@ -1,33 +1,36 @@
-import 'package:case_app/screens/products_and_services.dart';
+import 'dart:io';
+
+import 'package:case_app/core/route_model.dart';
 import 'package:case_app/widgets/choice_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
 import 'package:case_app/core/service_locator.dart';
-import 'package:case_app/screens/forms/aplication_form_pages/application_form.dart';
-import 'package:case_app/screens/choice_form.dart';
-import 'package:case_app/screens/forms/claim.dart';
-import 'package:case_app/screens/provider_network.dart';
-import 'package:case_app/screens/contact_us.dart';
-import 'package:case_app/screens/forms/feedback_and_inquiries.dart';
-import 'package:case_app/screens/near_me.dart';
-import 'package:case_app/screens/forms/quotation_forms/quotation_request.dart';
-
+import 'package:provider/provider.dart';
 
 class ChoiceForm extends StatelessWidget {
-  static Image image = Image.asset('assets/images/icon.png');
   static final _logger = Logger('Choice Form');
 
-  
   late bool isBig;
 
   @override
   Widget build(BuildContext context) {
-    //ProviderNetworkBloc(Position()).setMarkers();
+    return (Platform.isIOS)
+        ? CupertinoPageScaffold(child: MainBody())
+        : MainBody();
+  }
+}
+
+class MainBody extends StatelessWidget {
+  static Image image = Image.asset('assets/images/icon.png');
+
+  @override
+  Widget build(BuildContext context) {
+      final model = context.read<RouteModel>();
+
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    isBig = (width < 1008) ? false : true;
-
+    var isBig = (width < 1008) ? false : true;
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -59,55 +62,45 @@ class ChoiceForm extends StatelessWidget {
                                 : SliverGridDelegateWithFixedCrossAxisCount(
                                     childAspectRatio: 2, crossAxisCount: 2),
                             children: [
-                              // for (var entry in choiceBox.entries)
-                              //   ChoiceButton(nameRoute: entry)
                               ChoiceButton(
                                   name: 'Products & Services',
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>
-                                                ProductAndServices()));
+                                    model.isProductsNServcesLoaded = true;
                                   }),
                               ChoiceButton(
                                   name: 'Application Form',
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>
-                                                ApplicationForm()));
+                                    model.isApplicationLoaded = true;
                                   }),
                               ChoiceButton(
                                   name: 'Feedback & Inquiries',
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>
-                                                FeedbackInquiries()));
+                                    model.isFeedbackLoaded = true;
                                   }),
                               ChoiceButton(
                                   name: 'Quotation',
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>
-                                                QuotationRequest()));
+                                    model.isQuotationLoaded = true;
                                   }),
                               ChoiceButton(
                                   name: 'Near Me',
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>
-                                                NearMe()));
+                                    model.isNearbyLoaded = true;
                                   }),
                               ChoiceButton(
                                   name: 'Provider Network',
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>
-                                                ProviderNetwork()));
+                                    model.isProviderLoaded = true;
                                   }),
                               ChoiceButton(
                                   name: 'Contact Us',
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>
-                                                ContactUs()));
+                                    model.isContactUsLoaded = true;
                                   }),
                               ChoiceButton(
                                   name: 'Claim Form',
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (_)=>
-                                                ClaimForm()));
+                                    model.isClaimLoaded = true;
                                   }),
                             ],
                           ))),
@@ -122,5 +115,9 @@ class ChoiceForm extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  push(BuildContext context, String routeName) {
+    Navigator.pushNamed(context, routeName);
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:case_app/bloc/network_bloc.dart';
 import 'package:case_app/widgets/my_indicator.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,27 +24,53 @@ class _NearMeState extends State<NearMe> {
   Widget build(BuildContext context) {
     //setCityMarkers();
     var locator = Locator();
+   if (Platform.isIOS) {
+      return CupertinoPageScaffold(
+        
+        
+          navigationBar: CupertinoNavigationBar(
+            
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 93),
+            child: _Body(locator: locator),
+          ));
+    }
 
     return Scaffold(
       appBar: AppBar(),
-      body: Container(
-        child: Center(
-            child: Stack(
-          children: [
-                 FutureBuilder<Position>(
-                    future: locator.getCurrentLocation(),
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.done)
-                        return FireMap(
-                          center: snapshot.data,
-                        );
-                      return MyIndicator(Indicator.ballPulseRise);
-                    })
-              
-           
-          ],
-        )),
-      ),
+      body: _Body(locator: locator),
+    );
+  }
+}
+
+class _Body extends StatelessWidget {
+  const _Body({
+    Key? key,
+    required this.locator,
+  }) : super(key: key);
+
+  final Locator locator;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Center(
+          child: Stack(
+        children: [
+               FutureBuilder<Position>(
+                  future: locator.getCurrentLocation(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done)
+                      return FireMap(
+                        center: snapshot.data,
+                      );
+                    return MyIndicator(Indicator.ballPulseRise);
+                  })
+            
+         
+        ],
+      )),
     );
   }
 }

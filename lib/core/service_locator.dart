@@ -18,6 +18,8 @@ import 'package:case_app/data_handlers/submitters/quotation_submitter.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
+import 'route_model.dart';
+
 GetIt getIt = GetIt.instance;
 
 setup() {
@@ -56,16 +58,19 @@ setup() {
       getIt<IndividualQuotationSaverImpl>(), getIt<QuotationSubmitter>()));
 
 //application index
-  getIt.registerSingleton( ApplicationIndex());
+  getIt.registerSingleton(ApplicationIndex());
   //quotation index
   getIt.registerLazySingleton(() => QuotationIndex());
 
   ///////////////////////////////////////////////////
-  //objects
+  /////////objects
+  //page controller
   var pageController = PageController();
   getIt.registerSingleton<PageController>(pageController
     ..addListener(() {
       getIt<ApplicationIndex>().add(pageController.page!);
     }));
+  // Route Model
+  getIt.registerSingleton<RouteModel>(RouteModel());
   ///////////////////////////////////////////////////
 }
