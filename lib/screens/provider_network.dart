@@ -45,7 +45,8 @@ class _ProviderNetworkState extends State<ProviderNetwork> {
           style: TextStyle(fontSize: 16),
         ),
           ),
-          child: _Body(cityProviders: cityProviders));
+          child: SafeArea(child: 
+          _Body(cityProviders: cityProviders)));
     }
     return SafeArea(
       child: Scaffold(
