@@ -12,9 +12,9 @@ class ChoiceButton extends StatelessWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final fontSize = SizeConfig(context).blockWidth*4;
+    final fontSize = SizeConfig(context).blockWidth*3.5;
     return Padding(
-    padding: const EdgeInsets.only(top: 8, bottom: 8, left: 0, right: 0),
+    padding:  EdgeInsets.only(top: 0, bottom: fontSize, left: 0, right: 0),
       child: MaterialButton(
         onPressed: onPressed,
         splashColor: Colors.amber,

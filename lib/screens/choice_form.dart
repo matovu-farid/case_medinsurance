@@ -74,10 +74,10 @@ class ChoiceButtonList extends StatelessWidget {
   final RouteModel model;
   var xs = 6;
   
-  var sm = 4;
-  var md = 3;
-  var lg = 2;
-  var xl = 1;
+  var sm = 6;
+  var md = 6;
+  var lg = 6;
+  var xl = 6;
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +86,8 @@ class ChoiceButtonList extends StatelessWidget {
     return ListView(
       children: [
         SizedBox(
-            width: isBig ? width * 0.7 : width * 0.5,
-            height: isBig ? height * 0.4 : height * 0.2,
+            width: width * 0.5,
+            height:  height * 0.2,
             child: FittedBox(child: image)),
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.8,
@@ -96,7 +96,7 @@ class ChoiceButtonList extends StatelessWidget {
             child: Center(
                 child: Padding(
                     padding:  EdgeInsets.symmetric(
-                        horizontal: 8.0, vertical: sizeConfig.blockHeight*3),
+                        horizontal: 8.0, vertical: sizeConfig.blockHeight*3.5),
                     child: ResponsiveGridRow(
                       
                       crossAxisAlignment: CrossAxisAlignment.center,
