@@ -42,13 +42,15 @@ class ApplicationForm extends StatelessWidget {
           style: TextStyle(fontSize: 16),
         ),
           ),
-          child: _Body(formKey: _formKey));
+          child: SafeArea(child: Scaffold(body: _Body(formKey: _formKey))));
     }else
-        return Scaffold(
-          appBar: AppBar(
-           
-            centerTitle: true,title: Text('Application Form'),),
-          body: _Body(formKey: _formKey),
+        return SafeArea(
+          child: Scaffold(
+            appBar: AppBar(
+             
+              centerTitle: true,title: Text('Application Form'),),
+            body: _Body(formKey: _formKey),
+          ),
         );
       },
     );
