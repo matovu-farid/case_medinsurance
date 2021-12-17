@@ -1,21 +1,18 @@
-<<<<<<< HEAD
-# case_app
+# CaseMedInsurance
 
-A new Flutter project.
+## Descption
+A mobile application for CaseMedInsurance.
+The mobile app allows the clients of CaseMedInsurance to access the insurance services as well as make it easy to request for help from the insurance personnel.
 
-## Getting Started
+![screenshot](./assets/images/splash.png)
 
-This project is a starting point for a Flutter application.
+## View on play store
+The app is deployed on playstore
+[Click here](https://play.google.com/store/apps/details?id=com.faridorg.case_app)
 
-A few resources to get you started if this is your first Flutter project:
+## Author
+Matovu Farid Nkoba
+- [github](https://github.com/matovu-farid)
+- [linkedin](https://www.linkedin.com/in/matovu-farid-48b80257)
+- [twitter](https://twitter.com/matovu100)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# Case_app
-An application for case medcare
->>>>>>> 9efaedd637a83377e7fc71846499d38882816941
