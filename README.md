@@ -1,6 +1,6 @@
 # CaseMedInsurance
 
-## Descption
+## Description
 A mobile application for CaseMedInsurance.
 The mobile app allows the clients of CaseMedInsurance to access the insurance services as well as make it easy to request for help from the insurance personnel.
 
