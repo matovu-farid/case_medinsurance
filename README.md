@@ -6,6 +6,16 @@ The mobile app allows the clients of CaseMedInsurance to access the insurance se
 
 ![screenshot](./assets/images/splash.png)
 
+## Built with
+- Dart
+- Flutter
+
+## Getting Started
+To get the content of this project locally you need to run this command in your terminal:
+- git clone your https://github.com/matovu-farid/painter.git
+- cd project painter
+
+
 ## View on play store
 The app is deployed on playstore
 [Click here](https://play.google.com/store/apps/details?id=com.faridorg.case_app)
@@ -16,3 +26,10 @@ Matovu Farid Nkoba
 - [linkedin](https://www.linkedin.com/in/matovu-farid-48b80257)
 - [twitter](https://twitter.com/matovu100)
 
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
