@@ -1,14 +1,17 @@
 # CaseMedInsurance
+A mobile application for CaseMedInsurance.
 
 ## Description
-A mobile application for CaseMedInsurance.
-The mobile app allows the clients of CaseMedInsurance to access the insurance services as well as make it easy to request for help from the insurance personnel.
+The mobile app allows the clients of CaseMedInsurance to communicate with the insurance personnel as well as make it easy to request help from the insurance personnel. When a client wants to, for example, ask for an insurance quotation, they would input required details and the app drafts and automatically sends an email to Case Medisurance which would inform them of the needs of the client so they can respond.
+The client app is built with flutter and dart while the backend is built with firebase and cloud functions. 
 
 ![screenshot](./assets/images/splash.png)
 
 ## Built with
 - Dart
 - Flutter
+- Firebase
+- Cloud Functions
 
 ## Getting Started
 To get the content of this project locally you need to run this command in your terminal:
