@@ -14,7 +14,7 @@ import '../location.dart';
 abstract class NetworkBloc  {
   final geo = Geoflutterfire();
 
-  late CollectionReference ref;
+  late CollectionReference<Map<String,dynamic>> ref;
 
   setMarkers();
 
@@ -102,7 +102,7 @@ class ProviderNetworkBloc extends NetworkBloc {
     return documents.map((doc) {
       
       GeoPoint point = doc.data()!['position']['geopoint'];
-      var distance = center.distance(lat: point.latitude, lng: point.longitude);
+      var distance = center.kmDistance(lat: point.latitude, lng: point.longitude);
 
       return Marker(
           markerId: MarkerId(doc.id),

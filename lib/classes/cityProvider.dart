@@ -73,7 +73,7 @@ class CityProviders extends NetworkBloc {
   @override
   Stream<Set<Marker>> getMarkers() {
     var ref = FirebaseFirestore.instance.collection('cities');
-    return geo.collection(collectionRef: ref).snapshot().map((querySnapshot) {
+    return geo.collection(collectionRef: ref).snapshot()!.map((querySnapshot) {
       var docs = querySnapshot.docs;
       return docsToMarker(docs);
     });

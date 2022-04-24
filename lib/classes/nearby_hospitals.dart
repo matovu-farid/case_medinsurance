@@ -37,7 +37,7 @@ class NearHospitalNetworkBloc {
       List<DocumentSnapshot<Map<String, dynamic>>> documents) {
     var markers = documents.map((doc) {
       GeoPoint point = doc.data()!['position']['geopoint'];
-      var distance = center.distance(lat: point.latitude, lng: point.longitude);
+      var distance = center.kmDistance(lat: point.latitude, lng: point.longitude);
 
       return MyMarker(
           markerId: MarkerId(doc.id),
