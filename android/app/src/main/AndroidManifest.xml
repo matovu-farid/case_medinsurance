@@ -44,5 +44,30 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            <!-- You can name this style whatever you'd like -->
+<style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+    <item name="android:windowBackground">@drawable/[your_launch_drawable_here]</item>
+</style>
+<activity android:name=".MainActivity"
+  android:theme="@style/LaunchTheme"
+  // some code omitted
+  >
+  <!-- Specify that the launch screen should continue being displayed -->
+  <!-- until Flutter renders its first frame. -->
+  <meta-data
+    android:name="io.flutter.embedding.android.SplashScreenDrawable"
+    android:resource="@drawable/launch_background" />
+
+  <!-- Theme to apply as soon as Flutter begins rendering frames -->
+  <meta-data
+    android:name="io.flutter.embedding.android.NormalTheme"
+    android:resource="@style/NormalTheme"
+    />
+
+  <!-- some code omitted -->
+</activity>
     </application>
+    <meta-data
+    android:name="flutterEmbedding"
+    android:value="2" />
 </manifest>

@@ -25,7 +25,6 @@ main(List<String> args) {
   });
   setup();
 
-  WidgetsFlutterBinding.ensureInitialized();
   runApp(ChangeNotifierProvider(
       create: (_) => getIt<RouteModel>(),
       child: Providers(child: InitializedApp())));
