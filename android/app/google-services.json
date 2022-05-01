@@ -49,6 +49,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653130125039:android:ef64f8936b8fc1d3ed151a",
+        "android_client_info": {
+          "package_name": "com.faridorg.case_medinsurance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653130125039-ffcn5kk82bmjutab2kiivgekvpkpntrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAETju1TLjuzwzVW3ajqsgcR6HuGku7xhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653130125039-ffcn5kk82bmjutab2kiivgekvpkpntrh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "653130125039-a6mbtitvhu6bqumgh2a78q3r171fmkdt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.caseApp"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

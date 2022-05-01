@@ -16,6 +16,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'core/provider.dart';
 
 import 'package:provider/provider.dart';
+import 'firebase_options.dart';
+
 
 main(List<String> args) {
   Logger.root.onRecord.listen((record) {
@@ -24,7 +26,7 @@ main(List<String> args) {
     print('_' * 100);
   });
   setup();
-
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(ChangeNotifierProvider(
       create: (_) => getIt<RouteModel>(),
       child: Providers(child: InitializedApp())));
@@ -38,7 +40,9 @@ class InitializedApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: Firebase.initializeApp(),
+        future: Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform
+        ),
         builder: (cotentext, snapshot) {
           if (snapshot.connectionState == ConnectionState.done)
             return CaseApp();
